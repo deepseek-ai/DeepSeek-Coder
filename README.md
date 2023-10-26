@@ -1,13 +1,18 @@
-![logo](pictures/logo.jpeg)
+<p align="center">
+<img width="1000px" alt="DeepSeek Coder" src="pictures/logo.jpeg">
+</p>
+<p align="center"><a href="">[🏠 Homepage]</a> | <a href="">[🤖 Chat with DeepSeek Coder] | <a href="">[🤗 Models Download]</a> | <a href="">[📄 中文版]</a> </p>
+<hr>
+
 ### 1. Introduction of Deepseek Coder
 
-Deepseek Coder comprises a series of advanced language models trained on both 87% code and 13% natural language in English and Chinese, with each model pre-trained on 2T tokens. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and a extra fill-in-the-blank task, to support  project-level code completion and infilling. For coding capabilities, Deepseek Coder achieves state-of-the-art performance among open-source code models on various benchmarks. 
+Deepseek Coder comprises a series of advanced language models trained on both 87% code and 13% natural language in English and Chinese, with each model pre-trained on 2T tokens. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and a extra fill-in-the-blank task, to support  project-level code completion and infilling. For coding capabilities, Deepseek Coder achieves state-of-the-art performance among open-source code models on multiple programming languages and various benchmarks. 
 
 - **Massive Training Data**: Trained on 2T tokens, including 87% code and 13% linguistic data in both English and Chinese languages.
   
 - **Highly Flexible & Scalable**: Offered in model sizes of 1B, 7B, and 33B, enabling users to choose the setup most suitable for their requirements.
   
-- **Superior Model Performance**: State-of-the-art performance among publicly available code models on [**HumanEval-X**](), [**MBPP**](), [**DS-1000**](), and [**APPS**]() datasets.
+- **Superior Model Performance**: State-of-the-art performance among publicly available code models on [**HumanEval-X**](), [**MultiPL-E**](), [**MBPP**](), [**DS-1000**](), and [**APPS**]() benchmarks.
   
 - **Advanced Code Completion Capabilities**: A window size of 16K and a fill-in-the-blank task, supporting project-level code completion and infilling tasks.
 
@@ -26,7 +31,7 @@ Deepseek Coder comprises a series of advanced language models trained on both 87
 
 #### Model Training
 
-- Step 1: Initially pre-trained with a dataset consisting of 87% code, 10% code-related language (Github Markdown and StackExchange), and 3% non-code related Chinese language. This process involves 1.8T tokens and uses a 4K window size.
+- Step 1: Initially pre-trained with a dataset consisting of 87% code, 10% code-related language (Github Markdown and StackExchange), and 3% non-code related Chinese language. Models are pre-trained using 1.8T tokens and a 4K window size in this step.
 - Step 2: Further Pre-training using an extended 16K window size on an additional 200B tokens, resulting in foundational models.
 - Step 3: Instruction Fine-tuning on 300M tokens of instruction data, resulting in instruction-tuned models.
 
@@ -35,7 +40,7 @@ Deepseek Coder comprises a series of advanced language models trained on both 87
 
 
 ### 3. Download and Setup
-Deepseek Coder is initially implemented in Pytorch and trained on A100 AI Processors. We provide a torch-compatible version based on hai-llm to facilitate usage on GPU platforms. We also uploaded the checkpoint of models to the 🤗 [hugginface](https://huggingface.co/deepseek-ai/deepseek-coder-7b).
+Deepseek Coder is initially implemented in Pytorch and trained on A100 AI Processors. We provide a torch-compatible version based on hai-llm to facilitate usage on GPU platforms. We also uploaded the checkpoint of models to the 🤗 [huggingface](https://huggingface.co/deepseek-ai/deepseek-coder-7b).
 #### Setup
 Python 3.8+ / CUDA 11+ / PyTorch 2.0+ / transformers 3.34+ are required.
 ### 4. Inference and Evaluation
@@ -146,7 +151,7 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ---
-In the following scenario, the Deepseek-Coder 7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to complete a function for model training and evaluation.
+In the following scenario, the Deepseek-Coder 7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to correctly complete the **main** function in`main.py` file for model training and evaluation.
 
 ![Completion GIF](pictures/completion_demo.gif)
 
