@@ -144,6 +144,8 @@ inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
 outputs = model.generate(**inputs, max_length=128)
 print(tokenizer.decode(outputs[0]))
 ```
+![Completion GIF](pictures/completion_demo.gif)
+
 #### Chat Model Inference
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
