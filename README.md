@@ -146,7 +146,7 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ---
-In the following scenario, the Deepseek Coder model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to complete a function for model training and evaluation.
+In the following scenario, the Deepseek-Coder 7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to complete a function for model training and evaluation.
 
 ![Completion GIF](pictures/completion_demo.gif)
 
