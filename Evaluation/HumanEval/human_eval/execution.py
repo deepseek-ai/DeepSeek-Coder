@@ -13,10 +13,10 @@ import json
 from typing import *
 import traceback
 
-java_exec = "/weka-jd/prod/deepseek/permanent/zhuqihao/java/bin/"
-node_exec = "/weka-jd/prod/deepseek/permanent/zhuqihao/node/bin/"
-tsc_exec = "/weka-jd/prod/deepseek/permanent/zhuqihao/tsc/bin/"
-go_exec = "/weka-jd/prod/deepseek/permanent/shared/zhuqihao/go/bin/"
+java_exec = ""
+node_exec = ""
+tsc_exec = ""
+go_exec = ""
 php_exec = ""
 cs_exec = ""
 
