@@ -135,9 +135,9 @@ class IrisClassifier(nn.Module):
         return predicted.numpy()
 #main.py
 from utils import load_data, evaluate_predictions
-from model import IrisClassifier
+from model import IrisClassifier as Classifier
 
-def pipeline():
+def main():
     # Model training and evaluation
 """
 inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
