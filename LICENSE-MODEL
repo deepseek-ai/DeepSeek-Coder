@@ -18,7 +18,7 @@ This License governs the use of the model (and its derivatives) and is informed 
 
 NOW THEREFORE, You and DeepSeek agree as follows: 
 
-1.	Definitions 
+1. Definitions 
 "License" means the terms and conditions for use, reproduction, and Distribution as defined in this document. 
 "Data" means a collection of information and/or content extracted from the dataset used with the Model, including to train, pretrain, or otherwise evaluate the Model. The Data is not licensed under this License.
 "Output" means the results of operating a Model as embodied in informational content resulting therefrom. 
