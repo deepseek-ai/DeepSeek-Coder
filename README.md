@@ -48,12 +48,30 @@ Here give some examples of how to use our model.
 #### Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
-tokenizer = AutoTokenizer.from_pretrained("deepseek/deepseek-coder-7b")
-device = 0 if torch.cuda.is_available() else -1
-model = AutoModelForCausalLM.from_pretrained("deepseek/deepseek-coder-7b").to(device)
-inputs = tokenizer("def hello_world():", return_tensors="pt").to(device)
+import torch
+tokenizer = AutoTokenizer.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True)
+device = 2 if torch.cuda.is_available() else -1
+model = AutoModelForCausalLM.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True).to(device)
+inputs = tokenizer("#write a quick sort algorithm", return_tensors="pt").to(device)
 outputs = model.generate(**inputs, max_length=128)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+This code will output
+```python
+#write a quick sort algorithm
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    left = []
+    right = []
+    for i in range(1, len(arr)):
+        if arr[i] < pivot:
+            left.append(arr[i])
+        else:
+            right.append(arr[i])
+    return quick_sort(left) + [pivot] + quick_sort(right)
 ```
 
 #### Code Insertion
