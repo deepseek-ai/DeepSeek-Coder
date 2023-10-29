@@ -204,7 +204,7 @@ print(tokenizer.decode(outputs[0]))
 
 ### 5. Evaluation Results
 
-The reproducible code for the following evaluation results can be found in the Evaluation directory.
+The reproducible code for the following evaluation results can be found in the [Evaluation](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation) directory.
 
 #### 1) [HumanEval](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation/HumanEval)
 
