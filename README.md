@@ -1,7 +1,7 @@
 <p align="center">
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.jpeg">
 </p>
-<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="30px">Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder] | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="README_zh.md">[📄 中文版] </a> </p>
+<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder] | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="README_zh.md">[📄 中文版] </a> </p>
 <hr>
 
 
