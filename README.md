@@ -220,9 +220,9 @@ Multilingual Base Models
 | CodeLLama     | 13B  | 36.0%  | 37.9% | 38.0% | 34.2% | 45.2% | 43.0% | 16.5% | 32.3% | 35.4% |
 | CodeLLama     | 34B  | 48.2%  | 44.7% | 44.9% | 41.0% | 42.1% | 48.7% | 15.8% | 42.2% | 41.0% |
 |                     |      |        |       |       |       |       |       |       |       |       |
-| OraCoder-Base  | 1B   | 34.8%  | 31.1% | 32.3% | 24.2% | 28.9% | 36.7% | 10.1% | 28.6% | 28.3% |
-| OraCoder-Base | 7B   | 49.4%  | 50.3% | 43.0% | 38.5% | 49.7% | 50.0% | 28.5% | 48.4% | 44.7% |
-| OraCoder-Base | 33B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
+| DeepSeek-Coder-Base  | 1B   | 34.8%  | 31.1% | 32.3% | 24.2% | 28.9% | 36.7% | 10.1% | 28.6% | 28.3% |
+| DeepSeek-Coder-Base | 7B   | 49.4%  | 50.3% | 43.0% | 38.5% | 49.7% | 50.0% | 28.5% | 48.4% | 44.7% |
+| DeepSeek-Coder-Base | 33B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
 
 Instruction-Tuned Models
 | Model               | Size | Python | C++   | Java  | PHP   | TS    | C#    | Bash  | JS    | Avg   |
@@ -232,9 +232,9 @@ Instruction-Tuned Models
 | WizardCoder         | 16B  | 51.8%  | 41.6% | 41.1% | 42.2% | 44.7% | 46.8% | 12.7% | 42.8% | 40.5% |
 | Phind-CodeLlama     | 34B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
 |                     |      |        |       |       |       |       |       |       |       |       |
-| OraCoder-Chat | 1B   | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-| OraCoder-Chat | 7B   | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-| OraCoder-Chat | 33B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
+| DeepSeek-Coder-Instruct | 1B   | -      | -     | -     | -     | -     | -     | -     | -     | -     |
+| DeepSeek-Coder-Instruct | 7B   | -      | -     | -     | -     | -     | -     | -     | -     | -     |
+| DeepSeek-Coder-Instruct | 33B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
 
 
 
@@ -251,9 +251,9 @@ Multilingual Base Models
 | CodeLLama-Base | 13B  | 44.2% | 15.5% | 42.4%    | 65.6% | 61.6%  | 65.3% | 85.3% | 54.3% |
 | CodeLLama-Base | 34B  | 58.2% | 22.1% | 55.2%    | 77.2% | 69.6%  | 70.0% | 92.8% | 63.6% |
 |                |      |       |       |          |       |        |       |       |       |
-| OraCoder-Base  | 1B   | 17.0% | 13.4% | 13.3%    | 39.2% | 42.4%  | 44.8% | 66.0% | 33.7% |
-| OraCoder-Base  | 7B   | 46.0% | 20.6% | 40.0%    | 67.2% | 71.2%  | 67.1% | 89.1% | 57.3% |
-| OraCoder-Base  | 33B  | -     | -     | -        | -     | -      | -     | -     | -     |
+| DeepSeek-Coder-Base  | 1B   | 17.0% | 13.4% | 13.3%    | 39.2% | 42.4%  | 44.8% | 66.0% | 33.7% |
+| DeepSeek-Coder-Base  | 7B   | 46.0% | 20.6% | 40.0%    | 67.2% | 71.2%  | 67.1% | 89.1% | 57.3% |
+| DeepSeek-Coder-Base  | 33B  | -     | -     | -        | -     | -      | -     | -     | -     |
 
 
 Instruction-Tuned Models
@@ -262,9 +262,9 @@ Instruction-Tuned Models
 | ChatGPT       | -    | 78.6% | 38.7% | 67.6%    | 77.8% | 79.9%  | 81.0% | 89.4% | 73.3% |
 | GPT-4         | -    | 94.2% | 51.8% | 77.6%    | 94.8% | 95.9%  | 92.6% | 97.7% | 86.4% |
 |               |      |       |       |          |       |        |       |       |       |
-| OraCoder-Chat | 1B   | -     | -     | -        | -     | -      | -     | -     | -     |
-| OraCoder-Chat | 7B   | -     | -     | -        | -     | -      | -     | -     | -     |
-| OraCoder-Chat | 33B  | -     | -     | -        | -     | -      | -     | -     | -     |
+| DeepSeek-Coder-Instruct | 1B   | -     | -     | -        | -     | -      | -     | -     | -     |
+| DeepSeek-Coder-Instruct | 7B   | -     | -     | -        | -     | -      | -     | -     | -     |
+| DeepSeek-Coder-Instruct | 33B  | -     | -     | -        | -     | -      | -     | -     | -     |
 
 
 ### 6. Lincense
