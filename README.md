@@ -51,8 +51,8 @@ Here give some examples of how to use our model.
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-tokenizer = AutoTokenizer.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True).cuda()
 input_text = "#write a quick sort algorithm"
 inputs = tokenizer(input_text, return_tensors="pt").cuda()
 outputs = model.generate(**inputs, max_length=128)
@@ -78,8 +78,8 @@ def quick_sort(arr):
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-tokenizer = AutoTokenizer.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True).cuda()
 input_text = """<fim_prefix>def quick_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -103,8 +103,8 @@ This code will output the following result:
 #### 3）Repository Level Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
-tokenizer = AutoTokenizer.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True).cuda()
 
 input_text = """#utils.py
 import torch
@@ -193,8 +193,8 @@ In the following scenario, the Deepseek-Coder 7B model effectively calls a class
 #### 4）Chat Model Inference
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
-tokenizer = AutoTokenizer.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek/deepseek-coder-7b-base", trust_remote_code=True).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-7b-base", trust_remote_code=True).cuda()
 prompt = "write a quick sort algorithm in python."
 prompt = f"""Below is an instruction that describes a task, paired with an input that provides further context.\nWrite a response that appropriately completes the request.\n\n### Instruction:\nWrite a program to perform the given task.\n\nInput:\n{prompt}\n\n### Response:\n"""
 inputs = tokenizer.encode(prompt, return_tensors="pt").cuda()
