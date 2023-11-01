@@ -10,7 +10,7 @@
 Deepseek Coder comprises a series of code language models trained on both 87% code and 13% natural language in English and Chinese, with each model pre-trained on 2T tokens. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and a extra fill-in-the-blank task, to support  project-level code completion and infilling. For coding capabilities, Deepseek Coder achieves state-of-the-art performance among open-source code models on multiple programming languages and various benchmarks. 
 
 <p align="center">
-<img src="pictures/result.png" alt="result" width="80%">
+<img src="pictures/result.png" alt="result" width="65%">
 </p>
 
 - **Massive Training Data**: Trained on 2T tokens, including 87% code and 13% linguistic data in both English and Chinese languages.
@@ -207,10 +207,10 @@ print(tokenizer.decode(outputs[0]))
 
 ### 5. Evaluation Results
 We evaluate DeepSeek Coder on various coding-related benchmarks.
-The `passk@1` results on HumanEval (Python and Multilingual), MBPP, DS-1000 are reported as follows:
+Only `pass@1` results on HumanEval (Python and Multilingual), MBPP, DS-1000 are reported here:
 
 <p align="center">
-<img src="pictures/table.png" alt="table" width="85%">
+<img src="pictures/table.png" alt="table" width="80%">
 </p>
 
 The result shows that DeepSeek-Coder-Base-33B significantly outperforms existing open-source code LLMs. Compared with CodeLLama34B, it leads by 7.9%, 9.3%, 10.8% and 5.9% respectively on HumanEval Python, HumanEval Multilingual, MBPP and DS-1000.
