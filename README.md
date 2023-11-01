@@ -1,7 +1,7 @@
 <p align="center">
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.jpeg">
 </p>
-<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder] | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="README_zh.md">[📄 中文版] </a> </p>
+<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder] | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> </p>
 <hr>
 
 
@@ -206,68 +206,11 @@ print(tokenizer.decode(outputs[0]))
 
 The reproducible code for the following evaluation results can be found in the [Evaluation](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation) directory.
 
-#### 1) [HumanEval](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation/HumanEval)
-
-Multilingual Base Models
-
-| Model               | Size | Python | C++   | Java  | PHP   | TS    | C#    | Bash  | JS    | Avg   |
-| ------------------- | ---- | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| code-cushman-001    | 12B  | 33.5%  | 31.9% | 30.6% | 28.9% | 31.3% | 22.1% | 11.7% | -     | -     |
-| CodeShell           | 7B   | 35.4%  | 32.9% | 34.2% | 31.7% | 30.2% | 38.0% | 7.0%  | 33.5% | 30.4% |
-| CodeGeeX2           | 6B   | 36.0%  | 29.2% | 25.9% | 23.6% | 20.8% | 29.7% | 6.3%  | 24.8% | 24.5% |
-| StarCoderBase       | 16B  | 31.7%  | 31.1% | 28.5% | 25.4% | 34.0% | 34.8% | 8.9%  | 29.8% | 28.0% |
-| CodeLLama     | 7B   | 31.7%  | 29.8% | 34.2% | 23.6% | 36.5% | 36.7% | 12.0% | 29.2% | 29.2% |
-| CodeLLama     | 13B  | 36.0%  | 37.9% | 38.0% | 34.2% | 45.2% | 43.0% | 16.5% | 32.3% | 35.4% |
-| CodeLLama     | 34B  | 48.2%  | 44.7% | 44.9% | 41.0% | 42.1% | 48.7% | 15.8% | 42.2% | 41.0% |
-|                     |      |        |       |       |       |       |       |       |       |       |
-| DeepSeek-Coder-Base  | 1B   | 34.8%  | 31.1% | 32.3% | 24.2% | 28.9% | 36.7% | 10.1% | 28.6% | 28.3% |
-| DeepSeek-Coder-Base | 7B   | 49.4%  | 50.3% | 43.0% | 38.5% | 49.7% | 50.0% | 28.5% | 48.4% | 44.7% |
-| DeepSeek-Coder-Base | 33B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-
-Instruction-Tuned Models
-| Model               | Size | Python | C++   | Java  | PHP   | TS    | C#    | Bash  | JS    | Avg   |
-| ------------------- | ---- | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| ChatGPT             | -    | 70.7%  | 50.3% | 54.5% | 52.2% | 62.3% | 64.6% | 34.8% | 60.9% | 52.2% |
-| GPT-4               | -    | 82.3%  | 70.2% | 74.8% | 70.8% | 73.0% | 77.9% | 51.3% | 83.2% | 72.9% |
-| WizardCoder         | 16B  | 51.8%  | 41.6% | 41.1% | 42.2% | 44.7% | 46.8% | 12.7% | 42.8% | 40.5% |
-| Phind-CodeLlama     | 34B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-|                     |      |        |       |       |       |       |       |       |       |       |
-| DeepSeek-Coder-Instruct | 1B   | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-| DeepSeek-Coder-Instruct | 7B   | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-| DeepSeek-Coder-Instruct | 33B  | -      | -     | -     | -     | -     | -     | -     | -     | -     |
-
-
-
-#### 2) [Math Reasoning](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation/PAL-Math)
-
-Multilingual Base Models
-
-| Model          | Size | GSM8k | MATH  | GSM-Hard | SVAMP | TabMWP | ASDiv | MAWPS | Avg   |
-| -------------- | ---- | ----- | ----- | -------- | ----- | ------ | ----- | ----- | ----- |
-| CodeShell      | 7B   | 17.0% | 9.1%  | 18.2%    | 45.6% | 29.6%  | 46.6% | 56.8% | 31.8% |
-| CodeGeex-2     | 7B   | 23.6% | 9.6%  | 22.4%    | 48.0% | 47.2%  | 46.9% | 66.0% | 37.7% |
-| StarCoder-Base | 16B  | 27.3% | 11.5% | 24.2%    | 44.0% | 45.6%  | 54.9% | 73.4% | 40.1% |
-| CodeLLama-Base | 7B   | 36.4% | 12.3% | 29.7%    | 57.6% | 58.4%  | 59.6% | 82.6% | 48.0% |
-| CodeLLama-Base | 13B  | 44.2% | 15.5% | 42.4%    | 65.6% | 61.6%  | 65.3% | 85.3% | 54.3% |
-| CodeLLama-Base | 34B  | 58.2% | 22.1% | 55.2%    | 77.2% | 69.6%  | 70.0% | 92.8% | 63.6% |
-|                |      |       |       |          |       |        |       |       |       |
-| DeepSeek-Coder-Base  | 1B   | 17.0% | 13.4% | 13.3%    | 39.2% | 42.4%  | 44.8% | 66.0% | 33.7% |
-| DeepSeek-Coder-Base  | 7B   | 46.0% | 20.6% | 40.0%    | 67.2% | 71.2%  | 67.1% | 89.1% | 57.3% |
-| DeepSeek-Coder-Base  | 33B  | -     | -     | -        | -     | -      | -     | -     | -     |
-
-
-Instruction-Tuned Models
-| Model         | Size | GSM8k | MATH  | GSM-Hard | SVAMP | TabMWP | ASDiv | MAWPS | Avg   |
-| ------------- | ---- | ----- | ----- | -------- | ----- | ------ | ----- | ----- | ----- |
-| ChatGPT       | -    | 78.6% | 38.7% | 67.6%    | 77.8% | 79.9%  | 81.0% | 89.4% | 73.3% |
-| GPT-4         | -    | 94.2% | 51.8% | 77.6%    | 94.8% | 95.9%  | 92.6% | 97.7% | 86.4% |
-|               |      |       |       |          |       |        |       |       |       |
-| DeepSeek-Coder-Instruct | 1B   | -     | -     | -        | -     | -      | -     | -     | -     |
-| DeepSeek-Coder-Instruct | 7B   | -     | -     | -        | -     | -      | -     | -     | -     |
-| DeepSeek-Coder-Instruct | 33B  | -     | -     | -        | -     | -      | -     | -     | -     |
-
 
 ### 6. Lincense
+This code repository is licensed under the MIT License. The use of DeepSeek Coder model and weights is subject to the Model License. DeepSeek Coder supports commercial use.
+
+See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more details.
 
 ### 7. Contact
 
