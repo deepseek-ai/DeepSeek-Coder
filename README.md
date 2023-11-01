@@ -213,7 +213,8 @@ Only `pass@1` results on HumanEval (Python and Multilingual), MBPP, DS-1000 are 
 <img src="pictures/table.png" alt="table" width="80%">
 </p>
 
-The result shows that DeepSeek-Coder-Base-33B significantly outperforms existing open-source code LLMs. Compared with CodeLLama34B, it leads by 7.9%, 9.3%, 10.8% and 5.9% respectively on HumanEval Python, HumanEval Multilingual, MBPP and DS-1000.
+
+The result shows that DeepSeek-Coder-Base-33B significantly outperforms existing open-source code LLMs. Compared with CodeLLama-34B, it leads by 7.9%, 9.3%, 10.8% and 5.9% respectively on HumanEval Python, HumanEval Multilingual, MBPP and DS-1000.
 Surprisingly, our DeepSeek-Coder-Base-7B reaches the performance of CodeLlama-34B.
 And the DeepSeek-Coder-Instruct-33B model after instruction tuning outperforms GPT35-turbo on HumanEval and achieves comparable result with GPT35-turbo on MBPP.
 
