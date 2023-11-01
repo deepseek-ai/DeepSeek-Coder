@@ -9,7 +9,9 @@
 
 Deepseek Coder comprises a series of code language models trained on both 87% code and 13% natural language in English and Chinese, with each model pre-trained on 2T tokens. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and a extra fill-in-the-blank task, to support  project-level code completion and infilling. For coding capabilities, Deepseek Coder achieves state-of-the-art performance among open-source code models on multiple programming languages and various benchmarks. 
 
-<img src="pictures/result.png" alt="result" width="85%">
+<p align="center">
+<img src="pictures/result.png" alt="result" width="80%">
+</p>
 
 - **Massive Training Data**: Trained on 2T tokens, including 87% code and 13% linguistic data in both English and Chinese languages.
   
@@ -29,7 +31,8 @@ Deepseek Coder comprises a series of code language models trained on both 87% co
 - Step 2: Parsing the dependencies of files within the same repository to rearrange the file positions based on their dependencies.
 - Step 3: Concatenating dependent files to form a single example and employ repo-level minhash for deduplication.
 - Step 4: Further filtering out low-quality code, such as codes with syntax errors or poor readability.
-- <img src="pictures/data_clean.png" alt="data_creation" width="100%">
+
+<img src="pictures/data_clean.png" alt="data_creation" width="100%">
 
 #### Model Training
 
@@ -203,9 +206,18 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ### 5. Evaluation Results
+We evaluate DeepSeek Coder on various coding-related benchmarks.
+The `passk@1` results on HumanEval (Python and Multilingual), MBPP, DS-1000 are reported as follows:
 
-The reproducible code for the following evaluation results can be found in the [Evaluation](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation) directory.
+<p align="center">
+<img src="pictures/table.png" alt="table" width="85%">
+</p>
 
+The result shows that DeepSeek-Coder-Base-33B significantly outperforms existing open-source code LLMs. Compared with CodeLLama34B, it leads by 7.9%, 9.3%, 10.8% and 5.9% respectively on HumanEval Python, HumanEval Multilingual, MBPP and DS-1000.
+Surprisingly, our DeepSeek-Coder-Base-7B reaches the performance of CodeLlama-34B.
+And the DeepSeek-Coder-Instruct-33B model after instruction tuning outperforms GPT35-turbo on HumanEval and achieves comparable result with GPT35-turbo on MBPP.
+
+More evaluation details and reproducible code for above results can be found in the [Evaluation](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation) directory.
 
 ### 6. Lincense
 This code repository is licensed under the MIT License. The use of DeepSeek Coder model and weights is subject to the Model License. DeepSeek Coder supports commercial use.

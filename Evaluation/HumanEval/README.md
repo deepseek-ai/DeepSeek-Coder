@@ -1,6 +1,6 @@
 ## 1. Introduction
 
-We provide a test script to evaluate the performance of the **deepseek-coder** model on code generation benchmarks. We select the widely-used benchmarks: **[HumanEval](https://huggingface.co/datasets/openai_humaneval), [MultiPL-E](https://huggingface.co/datasets/nuprl/MultiPL-E)**.
+We provide a test script to evaluate the performance of the **deepseek-coder** model on code generation benchmarks. We select the widely-used benchmarks: **[HumanEval-Python](https://huggingface.co/datasets/openai_humaneval), [HumanEval-Multilingual](https://huggingface.co/datasets/nuprl/MultiPL-E)**.
 
 
 
@@ -12,7 +12,6 @@ pip install attrdict
 pip install transformers
 pip install pytorch
 ```
-
 
 
 ## 3. Evaluation
@@ -35,7 +34,6 @@ python -m accelerate.commands.launch --config_file test_config.yaml eval_pal.py 
 We report experimental results here for 8 main-stream programming languages, **python**, **c++**, **java**, **PHP**, **TypeScript**, **C#**, **Bash**, and **JavaScript**. For all open-source models, we utilize this repository to obtain the performance of the models on the HumanEval dataset. We set the maximum input length to **4096** and the maximum output length to **500**, and employ the **greedy search strategy**.
 
 
-
 #### (1) Multilingual Base Models
 
 | Model             | Size | Python | C++   | Java | PHP  | TS   | C#   | Bash | JS   | Avg  |
@@ -55,13 +53,12 @@ We report experimental results here for 8 main-stream programming languages, **p
 #### (3) Instruction-Tuned Models
 | Model               | Size | Python | C++   | Java | PHP  | TS   | C#   | Bash | JS   | Avg  |
 |---------------------|------|--------|-------|------|------|------|------|------|------|------|
-| ChatGPT             | -    | 70.7%  | 50.3% | 54.5%| 52.2%| 62.3%| 64.6%| 34.8%| 60.9%| 52.2%|
-| GPT-4               | -    | 82.3%  | 70.2% | 74.8%| 70.8%| 73.0%| 77.9%| 51.3%| 83.2%| 72.9%|
+| GPT35-turbo         | -    | 76.2%  | 63.4% | 69.2%| 60.9%| 69.1%| 70.8%| 42.4%| 67.1%| 64.9%|
+| GPT-4               | -    | 84.1%  | 76.4% | 81.6%| 77.2%| 77.4%| 79.1%| 58.2%| 78.0%| 76.5%|
 | WizardCoder         | 16B  | 51.8%  | 41.6% | 41.1%| 42.2%| 44.7%| 46.8%| 12.7%| 42.8%| 40.5%|
 | Phind-CodeLlama     | 34B  | -      | -     | -    | -    | -    | -    | -    | -    | -    |
 | | | | |  |  |  |  |  |  | |
 | OraCoder-Chat (1B)  | 1B  | -      | -     | -    | -    | -    | -    | -    | -    | -    |
-| OraCoder-Chat (7B)  | 7B  | -      | -     | -    | -    | -    | -    | -    | -    | -    |
-| OraCoder-Chat (33B) | 33B | -      | -     | -    | -    | -    | -    | -    | -    | -    |
-
+| OraCoder-Chat (7B)  | 7B  | 78.9%  | 63.4% | 68.4% | 68.9%| 67.2%| 72.8%| 36.7%| 72.7%| 66.1%|
+| OraCoder-Chat (33B) | 33B | 79.3%  | 68.9% | 73.4% | 72.7%| 67.9%| 74.1%| 43.0%| 73.9%| 69.2%|
 
