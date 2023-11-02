@@ -1,0 +1,562 @@
+{"input":"If there are 7 bottle caps in a box and Linda puts 7 more bottle caps inside, how many bottle caps are in the box?","target":14.0}
+{"input":"Jose starts with 7 bottle caps. He gets 2 more from Rebecca. How many bottle caps does Jose end with?","target":9.0}
+{"input":"Bridget has 4 Skittles. Henry has 4 Skittles. If Henry gives all of his Skittles to Bridget, how many Skittles will Bridget have?","target":8.0}
+{"input":"Brenda starts with 7 Skittles. She buys 8 more. How many Skittles does Brenda end with?","target":15.0}
+{"input":"There are 4 cards. 3 cards more are added. How many are there total?","target":7.0}
+{"input":"There are 4 marbles. 7 marbles more are added. How many are there total?","target":11.0}
+{"input":"There are 8 oranges. 8 oranges more are added. How many are there total?","target":16.0}
+{"input":"Carol collects 2 peanuts. Carol's father gives Carol 5 more. How many peanuts does Carol have?","target":7.0}
+{"input":"There are 9 cards. 4 cards more are added. How many are there total?","target":13.0}
+{"input":"If there are 7 bottle caps in a box and Linda puts 7 more bottle caps inside, how many bottle caps are in the box?","target":14.0}
+{"input":"Bobby collects 2 blocks. Bobby's father gives Bobby 6 more. How many blocks does Bobby have?","target":8.0}
+{"input":"Peter starts with 8 erasers. Bridget gives Peter 3 more. How many erasers does Peter end with?","target":11.0}
+{"input":"If there are 7 crayons in a box and Gerald puts 6 more crayons inside, how many crayons are in the box?","target":13.0}
+{"input":"Michelle has 2 crayons. Janet has 2 crayons. If Janet gives all of her crayons to Michelle, how many crayons will Michelle have?","target":4.0}
+{"input":"Anna collects 6 blocks. Anna's father gives Anna 8 more. How many blocks does Anna have?","target":14.0}
+{"input":"Donald has 4 oranges. He finds another 5. How many oranges does Donald have in all?","target":9.0}
+{"input":"If there are 7 eggs in a box and Daniel puts 4 more eggs inside, how many eggs are in the box?","target":11.0}
+{"input":"Wayne collects 9 blocks. Wayne's father gives Wayne 6 more. How many blocks does Wayne have?","target":15.0}
+{"input":"Bridget has 4 Skittles. Henry has 4 Skittles. If Henry gives all of his Skittles to Bridget, how many Skittles will Bridget have?","target":8.0}
+{"input":"Ralph collects 4 cards. Ralph's father gives Ralph 8 more. How many cards does Ralph have?","target":12.0}
+{"input":"Martha starts with 3 cards. She gets 76 more from Emily. How many cards does Martha end with?","target":79.0}
+{"input":"There are 86 blocks. 9 blocks more are added. How many are there total?","target":95.0}
+{"input":"Cheryl starts with 8 Skittles. Kathryn gives Cheryl 89 more. How many Skittles does Cheryl end with?","target":97.0}
+{"input":"If there are 76 erasers in a box and Patrick puts 9 more erasers inside, how many erasers are in the box?","target":85.0}
+{"input":"Amy starts with 7 peanuts. Gerald gives Amy 55 more. How many peanuts does Amy end with?","target":62.0}
+{"input":"Teresa starts with 52 bananas. She gets 2 more from Rachel. How many bananas does Teresa end with?","target":54.0}
+{"input":"Gloria has 2 pencils. Lisa has 99 pencils. If Lisa gives all of her pencils to Gloria, how many pencils will Gloria have?","target":101.0}
+{"input":"Mildred collects 77 oranges. Mildred's father gives Mildred 2 more. How many oranges does Mildred have?","target":79.0}
+{"input":"Anna starts with 5 candies. She gets 86 more from Larry. How many candies does Anna end with?","target":91.0}
+{"input":"Martha has 2 peanuts. Joyce has 26 peanuts. If Joyce gives all of her peanuts to Martha, how many peanuts will Martha have?","target":28.0}
+{"input":"Kevin starts with 7 cards. He finds another 47. How many cards does Kevin end with?","target":54.0}
+{"input":"Joshua has 40 bottle caps. He buys 7 more. How many bottle caps does Joshua have in all?","target":47.0}
+{"input":"Nicholas starts with 8 bottle caps. He gets 85 more from Catherine. How many bottle caps does Nicholas end with?","target":93.0}
+{"input":"Mary starts with 27 eggs. She finds another 4. How many eggs does Mary end with?","target":31.0}
+{"input":"Shirley starts with 98 eggs. She buys 8 more. How many eggs does Shirley end with?","target":106.0}
+{"input":"William starts with 15 tickets. He buys 3 more. How many tickets does William end with?","target":18.0}
+{"input":"Harry starts with 79 apples. He buys 5 more. How many apples does Harry end with?","target":84.0}
+{"input":"Barbara has 9 candies. She buys 18 more. How many candies does Barbara have in all?","target":27.0}
+{"input":"Eugene has 51 pencils. He gets 6 more from Joyce. How many pencils does Eugene have in all?","target":57.0}
+{"input":"Anthony has 9 pencils. Kathryn gives Anthony 56 more. How many pencils does Anthony have in all?","target":65.0}
+{"input":"Andrew starts with 8 eggs. He buys 62 more. How many eggs does Andrew end with?","target":70.0}
+{"input":"Annie starts with 4 crayons. Matthew gives Annie 36 more. How many crayons does Annie end with?","target":40.0}
+{"input":"Angela has 11 tickets. Annie gives Angela 4 more. How many tickets does Angela have in all?","target":15.0}
+{"input":"Charles has 4 apples. Jessica gives Charles 39 more. How many apples does Charles have in all?","target":43.0}
+{"input":"Lisa starts with 91 bananas. Maria gives Lisa 8 more. How many bananas does Lisa end with?","target":99.0}
+{"input":"Evelyn starts with 18 bottle caps. She finds another 63. How many bottle caps does Evelyn end with?","target":81.0}
+{"input":"Brenda has 34 apples. She gets 37 more from Willie. How many apples does Brenda have in all?","target":71.0}
+{"input":"Joseph has 67 candies. Kathy gives Joseph 38 more. How many candies does Joseph have in all?","target":105.0}
+{"input":"Janet has 57 apples. She finds another 95. How many apples does Janet have in all?","target":152.0}
+{"input":"Nancy starts with 91 bottle caps. She finds another 88. How many bottle caps does Nancy end with?","target":179.0}
+{"input":"Harold has 53 marbles. He gets 16 more from Steve. How many marbles does Harold have in all?","target":69.0}
+{"input":"Denise removes 5 bananas from a jar. There were originally 46 bananas in the jar. How many bananas are left in the jar?","target":41.0}
+{"input":"Arthur removes 4 pencils from a jar. There were originally 87 pencils in the jar. How many pencils are left in the jar?","target":83.0}
+{"input":"Joyce starts with 75 apples. She gives 52 to Larry. How many apples does Joyce end with?","target":23.0}
+{"input":"Rachel removes 47 bottle caps from a jar. There were originally 87 bottle caps in the jar. How many bottle caps are left in the jar?","target":40.0}
+{"input":"Anne weighs 67 pounds. Douglas weighs 52 pounds. How much heavier is Anne than Douglas?","target":15.0}
+{"input":"Jessica weighs 49 pounds. Thomas weighs 44 pounds. How much heavier is Jessica than Thomas?","target":5.0}
+{"input":"Debra removes 22 apples from a jar. There were originally 57 apples in the jar. How many apples are left in the jar?","target":35.0}
+{"input":"Virginia starts with 96 eggs. Amy takes 3 away. How many eggs does Virginia end with?","target":93.0}
+{"input":"Donna weighs 69 pounds. Willie weighs 51 pounds. How much heavier is Donna than Willie?","target":18.0}
+{"input":"There are 47 eggs in a box. Harry takes 5 eggs. How many are left?","target":42.0}
+{"input":"Edward starts with 92 eggs. He gives 40 to Phillip. How many eggs does Edward end with?","target":52.0}
+{"input":"David removes 7 eggs from a jar. There were originally 27 eggs in the jar. How many eggs are left in the jar?","target":20.0}
+{"input":"There are 79 pencils in a box. Eric takes 4 pencils. How many are left?","target":75.0}
+{"input":"Jane starts with 87 crayons. 7 are eaten by a hippopotamus. How many crayons does Jane end with?","target":80.0}
+{"input":"Roger has 95 candies. He gives 3 to Stephanie. How many candies will Roger have?","target":92.0}
+{"input":"There are 96 oranges in a box. Jonathan takes 45 oranges. How many are left?","target":51.0}
+{"input":"Marie starts with 95 erasers. She loses 42. How many erasers does Marie end with?","target":53.0}
+{"input":"There are 22 oranges in a box. Paula takes 7 oranges. How many are left?","target":15.0}
+{"input":"Melissa has 88 bananas. She shares 4 with Joshua. How many bananas will Melissa have?","target":84.0}
+{"input":"Larry has 67 cards. Dennis takes 9 away. How many cards will Larry have?","target":58.0}
+{"input":"John weighs 81 pounds. Roy weighs 4 pounds. How much heavier is John than Roy?","target":77.0}
+{"input":"Larry starts with 93 stickers. He loses 6. How many stickers does Larry end with?","target":87.0}
+{"input":"Carlos starts with 39 bananas. 3 are eaten by a hippopotamus. How many bananas does Carlos end with?","target":36.0}
+{"input":"Patricia starts with 76 candies. Albert takes 5 away. How many candies does Patricia end with?","target":71.0}
+{"input":"There are 16 bottle caps in a box. Marvin takes 6 bottle caps. How many are left?","target":10.0}
+{"input":"Ernest starts with 17 crayons. Jennifer takes 6 away. How many crayons does Ernest end with?","target":11.0}
+{"input":"Mildred weighs 59 pounds. Carol weighs 9 pounds. How much heavier is Mildred than Carol?","target":50.0}
+{"input":"Diana starts with 65 bottle caps. 4 are eaten by a hippopotamus. How many bottle caps does Diana end with?","target":61.0}
+{"input":"Ruby has 63 apples. Emily takes 55 away. How many apples will Ruby have?","target":8.0}
+{"input":"Craig starts with 5 Skittles. 2 are eaten by a hippopotamus. How many Skittles does Craig end with?","target":3.0}
+{"input":"Steve has 46 oranges. He shares 4 with Patrick. How many oranges will Steve have?","target":42.0}
+{"input":"Bridget weighs 39 pounds. Martha weighs 2 pounds. How much heavier is Bridget than Martha?","target":37.0}
+{"input":"Brian has 76 cards. Wayne takes 59 away. How many cards will Brian have?","target":17.0}
+{"input":"Billy has 62 crayons. 52 are eaten by a hippopotamus. How many crayons will Billy have?","target":10.0}
+{"input":"Pamela starts with 30 bottle caps. Jean takes 26 away. How many bottle caps does Pamela end with?","target":4.0}
+{"input":"Katherine has 34 bottle caps. 8 are eaten by a hippopotamus. How many bottle caps will Katherine have?","target":26.0}
+{"input":"Melissa has 70 oranges. John takes 19 away. How many oranges will Melissa have?","target":51.0}
+{"input":"Norma starts with 47 bananas. She loses 45. How many bananas does Norma end with?","target":2.0}
+{"input":"Willie starts with 36 stickers. He gives 7 to Emily. How many stickers does Willie end with?","target":29.0}
+{"input":"Aaron starts with 81 erasers. He gives 34 to Doris. How many erasers does Aaron end with?","target":47.0}
+{"input":"Charles has 25 Skittles. Diana takes 7 away. How many Skittles will Charles have?","target":18.0}
+{"input":"Norma has 88 cards. She loses 70. How many cards will Norma have?","target":18.0}
+{"input":"Pamela has 50 Skittles. She gives 7 to Karen. How many Skittles will Pamela have?","target":43.0}
+{"input":"Evelyn starts with 76 Skittles. She shares 72 with Christine. How many Skittles does Evelyn end with?","target":4.0}
+{"input":"Helen starts with 82 cards. Gary takes 9 away. How many cards does Helen end with?","target":73.0}
+{"input":"Ruth starts with 89 apples. She shares 5 with Peter. How many apples does Ruth end with?","target":84.0}
+{"input":"Carlos has 58 blocks. He gives 21 to Rachel. How many blocks will Carlos have?","target":37.0}
+{"input":"Jesse starts with 78 pencils. He gives 44 to Joshua. How many pencils does Jesse end with?","target":34.0}
+{"input":"Roger has 92 blocks. 2 are eaten by a hippopotamus. How many blocks will Roger have?","target":90.0}
+{"input":"Heather starts with 86 blocks. She shares 41 with Jose. How many blocks does Heather end with?","target":45.0}
+{"input":"Ralph starts with 74 peanuts. He loses 59. How many peanuts does Ralph end with?","target":15.0}
+{"input":"Jack starts with 62 marbles. He shares 33 with Rebecca. How many marbles does Jack end with?","target":29.0}
+{"input":"Clarence has 99 tickets. He gives 7 to Eugene. How many tickets will Clarence have?","target":92.0}
+{"input":"Sean has 55 blocks. 29 are eaten by a hippopotamus. How many blocks will Sean have?","target":26.0}
+{"input":"Tina has 82 bananas. She gets 3 more from Joyce. How many bananas does Tina have in all?","target":85.0}
+{"input":"Janet has 3 stickers. She gets 53 more from Ruth. How many stickers does Janet have in all?","target":56.0}
+{"input":"Jennifer starts with 7 apples. She finds another 74. How many apples does Jennifer end with?","target":81.0}
+{"input":"Heather has 60 oranges. Russell takes 35 away. How many oranges will Heather have?","target":25.0}
+{"input":"Helen starts with 9 oranges. She gets 29 more from Ann. How many oranges does Helen end with?","target":38.0}
+{"input":"William has 2 bottle caps. He buys 41 more. How many bottle caps does William have in all?","target":43.0}
+{"input":"Dorothy has 72 cards. She gives 5 to Harold. How many cards will Dorothy have?","target":67.0}
+{"input":"Sara has 10 marbles. She loses 7. How many marbles will Sara have?","target":3.0}
+{"input":"Jennifer has 72 cards. 61 are eaten by a hippopotamus. How many cards will Jennifer have?","target":11.0}
+{"input":"Wanda has 4 blocks. Theresa gives Wanda 79 more. How many blocks does Wanda have in all?","target":83.0}
+{"input":"William has 10 marbles. He shares 3 with Theresa. How many marbles will William have?","target":7.0}
+{"input":"Larry starts with 91 cards. 17 are eaten by a hippopotamus. How many cards does Larry end with?","target":74.0}
+{"input":"Sarah has 26 bottle caps. She buys 3 more. How many bottle caps does Sarah have in all?","target":29.0}
+{"input":"There are 3 eggs in each box. How many eggs are in 2 boxes?","target":6.0}
+{"input":"Each bottle cap costs $2.00. How much do 6 bottle caps cost?","target":12.0}
+{"input":"Each child has 3 oranges. If there are 4 children, how many oranges are there in total?","target":12.0}
+{"input":"Each banana costs $5.00. How much do 4 bananas cost?","target":20.0}
+{"input":"Each ticket costs $9.00. How much do 4 tickets cost?","target":36.0}
+{"input":"Each bottle cap costs $5.00. How much do 5 bottle caps cost?","target":25.0}
+{"input":"Michelle has 7 boxes of crayons. Each box holds 5 crayons. How many crayons does Michelle have?","target":35.0}
+{"input":"There are 8 marbles in each box. How many marbles are in 6 boxes?","target":48.0}
+{"input":"Each child has 2 candies. If there are 9 children, how many candies are there in total?","target":18.0}
+{"input":"Each child has 5 bottle caps. If there are 9 children, how many bottle caps are there in total?","target":45.0}
+{"input":"Each child has 6 pencils. If there are 2 children, how many pencils are there in total?","target":12.0}
+{"input":"Each child has 5 bottle caps. If there are 9 children, how many bottle caps are there in total?","target":45.0}
+{"input":"Each ticket costs $9.00. How much do 4 tickets cost?","target":36.0}
+{"input":"Stephanie went to the store 8 times last month. She buys 2 oranges each time she goes to the store. How many oranges did Stephanie buy last month?","target":16.0}
+{"input":"Sarah has 7 boxes of apples. Each box holds 7 apples. How many apples does Sarah have?","target":49.0}
+{"input":"Martin has 8 boxes of crayons. Each box holds 7 crayons. How many crayons does Martin have?","target":56.0}
+{"input":"There are 9 bottle caps in each box. How many bottle caps are in 6 boxes?","target":54.0}
+{"input":"Paula has 6 boxes of peanuts. Each box holds 4 peanuts. How many peanuts does Paula have?","target":24.0}
+{"input":"Eric has 3 boxes of pencils. Each box holds 9 pencils. How many pencils does Eric have?","target":27.0}
+{"input":"There are 6 marbles in each box. How many marbles are in 3 boxes?","target":18.0}
+{"input":"Kimberly went to the store 3 times last month. She buys 7 peanuts each time she goes to the store. How many peanuts did Kimberly buy last month?","target":21.0}
+{"input":"Ronald went to the store 2 times last month. He buys 10 bananas each time he goes to the store. How many bananas did Ronald buy last month?","target":20.0}
+{"input":"Kathleen went to the store 5 times last month. She buys 5 bottle caps each time she goes to the store. How many bottle caps did Kathleen buy last month?","target":25.0}
+{"input":"There are 4 crayons in each box. How many crayons are in 3 boxes?","target":12.0}
+{"input":"Kimberly went to the store 3 times last month. She buys 7 peanuts each time she goes to the store. How many peanuts did Kimberly buy last month?","target":21.0}
+{"input":"The school is planning a field trip. There are 14 students and 2 seats on each school bus. How many buses are needed to take the trip?","target":7.0}
+{"input":"Betty has 24 oranges stored in boxes. If there are 3 boxes, how many oranges must go in each box?","target":8.0}
+{"input":"The school is planning a field trip. There are 9 students and 3 seats on each school bus. How many buses are needed to take the trip?","target":3.0}
+{"input":"There are 2 students in the class and 18 pencils. If the pencils are divided equally among the students, how many does each student get?","target":9.0}
+{"input":"There are 9 students in the class and 81 tickets. If the tickets are divided equally among the students, how many does each student get?","target":9.0}
+{"input":"There are 35 bottle caps in Beverly's bottle cap collection. If the bottle caps are organized into 7 groups, how big is each group?","target":5.0}
+{"input":"Jeffrey wants to split a collection of bottle caps into groups of 2. Jeffrey has 12 bottle caps. How many groups will be created?","target":6.0}
+{"input":"There are 9 students in the class and 81 tickets. If the tickets are divided equally among the students, how many does each student get?","target":9.0}
+{"input":"Peter has 3 candies stored in boxes. If there are 3 boxes, how many candies must go in each box?","target":1.0}
+{"input":"There are 7 students in the class and 42 apples. If the apples are divided equally among the students, how many does each student get?","target":6.0}
+{"input":"Martha is inviting 4 friends to a party. She has 12 cookies. How many cookies will each friend get?","target":3.0}
+{"input":"Jesse has 21 bananas. If he shares them among 3 friends, how many bananas does each friend get?","target":7.0}
+{"input":"There are 7 students in the class and 56 eggs. If the eggs are divided equally among the students, how many does each student get?","target":8.0}
+{"input":"Elizabeth is inviting 5 friends to a party. She has 5 cookies. How many cookies will each friend get?","target":1.0}
+{"input":"There are 72 cards in Jean's card collection. If the cards are organized into 9 groups, how big is each group?","target":8.0}
+{"input":"Eric wants to split a collection of peanuts into groups of 8. Eric has 64 peanuts. How many groups will be created?","target":8.0}
+{"input":"Henry wants to split a collection of crayons into groups of 6. Henry has 42 crayons. How many groups will be created?","target":7.0}
+{"input":"Jack is inviting 4 friends to a party. He has 4 cookies. How many cookies will each friend get?","target":1.0}
+{"input":"Harry is inviting 3 friends to a party. He has 12 cookies. How many cookies will each friend get?","target":4.0}
+{"input":"There are 30 candies in Kathy's candy collection. If the candies are organized into 10 groups, how big is each group?","target":3.0}
+{"input":"Deborah is inviting 10 friends to a party. She has 80 cookies. How many cookies will each friend get?","target":8.0}
+{"input":"The school is planning a field trip. There are 28 students and 7 seats on each school bus. How many buses are needed to take the trip?","target":4.0}
+{"input":"There are 36 bananas in Diane's banana collection. If the bananas are organized into 6 groups, how big is each group?","target":6.0}
+{"input":"There are 36 bananas in Diane's banana collection. If the bananas are organized into 6 groups, how big is each group?","target":6.0}
+{"input":"Louise has 42 oranges stored in boxes. If there are 7 boxes, how many oranges must go in each box?","target":6.0}
+{"input":"The school is planning a field trip. There are 45 students and 9 seats on each school bus. How many buses are needed to take the trip?","target":5.0}
+{"input":"Michael has 16 blocks stored in boxes. If there are 8 boxes, how many blocks must go in each box?","target":2.0}
+{"input":"Albert has 35 oranges stored in boxes. If there are 7 boxes, how many oranges must go in each box?","target":5.0}
+{"input":"Lori has 30 marbles. If she shares them among 5 friends, how many marbles does each friend get?","target":6.0}
+{"input":"Brenda wants to split a collection of erasers into groups of 90. Brenda has 270 erasers. How many groups will be created?","target":3.0}
+{"input":"The school is planning a field trip. There are 180 students and 60 seats on each school bus. How many buses are needed to take the trip?","target":3.0}
+{"input":"Bonnie has 10 tickets. If she shares them among 2 friends, how many tickets does each friend get?","target":5.0}
+{"input":"Steven wants to split a collection of cards into groups of 6. Steven has 30 cards. How many groups will be created?","target":5.0}
+{"input":"Eric has 9306 erasers. If he shares them among 99 friends, how many erasers does each friend get?","target":94.0}
+{"input":"Diana has 3840 erasers. If she shares them among 48 friends, how many erasers does each friend get?","target":80.0}
+{"input":"Ashley sold 12 boxes of Samoas. How many cases of 12 boxes, plus extra boxes does Ashley need?","target":1.0}
+{"input":"Ashley sold 12 boxes of Samoas. How many cases of 12 boxes, plus extra boxes does Ashley need?","target":1.0}
+{"input":"Ashley sold 12 boxes of Samoas. How many cases of 12 boxes, plus extra boxes does Ashley need?","target":1.0}
+{"input":"Ashley sold 12 boxes of Samoas. How many cases of 12 boxes, plus extra boxes does Ashley need?","target":1.0}
+{"input":"Sarah sold 24 boxes of Lemon Chalet Cremes. How many cases of 12 boxes, plus extra boxes does Sarah need?","target":2.0}
+{"input":"If Karen sold 36 boxes of Tagalongs, how many cases of 12 boxes does Karen pickup from the cookie mom?","target":3.0}
+{"input":"If Karen sold 36 boxes of Tagalongs, how many cases of 12 boxes does Karen pickup from the cookie mom?","target":3.0}
+{"input":"If Karen sold 36 boxes of Tagalongs, how many cases of 12 boxes does Karen pickup from the cookie mom?","target":3.0}
+{"input":"If Madison sold 24 boxes of Tagalongs, how many cases of 12 boxes does Madison pickup from the cookie mom?","target":2.0}
+{"input":"If Karen sold 36 boxes of Tagalongs, how many cases of 12 boxes does Karen pickup from the cookie mom?","target":3.0}
+{"input":"If Harold split 15 apples between 3 people in her class and kept the left overs, how many apples did each classmate get?","target":5.0}
+{"input":"If Victor split 25 Skittles between 5 people in her class and kept the left overs, how many Skittles did each classmate get?","target":5.0}
+{"input":"Jenny sold 24 boxes of Trefoils. How many cases of 8 boxes, plus extra boxes does Jenny need to deliver?","target":3.0}
+{"input":"Gumballs come in packages of 5. Nathan ate 20 gumballs. How many whole boxes did he eat and how many gumballs does he have left?","target":4.0}
+{"input":"Shirley sold 20 boxes of Do-Si-Dos. How many cases of 4 boxes, plus extra boxes does Shirley need to deliver?","target":5.0}
+{"input":"Lemon heads come in packages of 6. Louis ate 54 Lemon Heads. How many whole boxes did he eat and how many Lemon Heads does he have left?","target":9.0}
+{"input":"Lemon heads come in packages of 6. Louis ate 54 Lemon Heads. How many whole boxes did he eat and how many Lemon Heads does he have left?","target":9.0}
+{"input":"Lemon heads come in packages of 6. Louis ate 54 Lemon Heads. How many whole boxes did he eat and how many Lemon Heads does he have left?","target":9.0}
+{"input":"Marilyn starts with 51 bottle caps. She shares 36 with Nancy. How many bottle caps does Marilyn end with?","target":15.0}
+{"input":"William has 2 bottle caps. He buys 41 more. How many bottle caps does William have in all?","target":43.0}
+{"input":"Carol starts with 42 blocks. She loses 25. How many blocks does Carol end with?","target":17.0}
+{"input":"Lillian collects 88 candies. Lillian's father gives Lillian 5 more. How many candies does Lillian have?","target":93.0}
+{"input":"William has 2 bottle caps. He buys 41 more. How many bottle caps does William have in all?","target":43.0}
+{"input":"There are 8 apples in a pile on the desk. Each apple comes in a package of 11. 5 apples are added to the pile. How many apples are there in the pile?","target":13.0}
+{"input":"Sean has 9 apples. Susan gives Sean 8 more. Later, Sean buys 18 tickets at the store. How many apples does Sean have in all?","target":17.0}
+{"input":"There are 2 bananas in a pile on the desk. Each banana comes in a package of 17. 7 bananas are added to the pile. How many bananas are there in the pile?","target":9.0}
+{"input":"There are 6 candies in a pile on the desk. Each candy comes in a package of 15. 4 candies are added to the pile. How many candies are there in the pile?","target":10.0}
+{"input":"Kimberly has 5 Skittles. She buys 7 more. Later, Kimberly buys 18 oranges at the store. How many Skittles does Kimberly have in all?","target":12.0}
+{"input":"Clarence has 5 oranges. He gets 3 more from Joyce. Later, Clarence buys 9 Skittles at the store. How many oranges does Clarence have in all?","target":8.0}
+{"input":"There are 2 apples in a pile on the desk. Each apple comes in a package of 7. 4 apples are added to the pile. How many apples are there in the pile?","target":6.0}
+{"input":"Kimberly has 5 Skittles. She buys 7 more. Later, Kimberly buys 18 oranges at the store. How many Skittles does Kimberly have in all?","target":12.0}
+{"input":"Annie has 6 apples. She gets 6 more from Nathan. Later, Annie buys 10 crayons at the store. How many apples does Annie have in all?","target":12.0}
+{"input":"Joyce has 8 eggs. Marie gives Joyce 6 more. Later, Joyce buys 13 erasers at the store. How many eggs does Joyce have in all?","target":14.0}
+{"input":"There are 2 bananas in a pile on the desk. Each banana comes in a package of 13. 7 bananas are added to the pile. How many bananas are there in the pile?","target":9.0}
+{"input":"Kenneth has 3 marbles. He buys 6 more. Later, Kenneth buys 15 apples at the store. How many marbles does Kenneth have in all?","target":9.0}
+{"input":"Arthur has 6 cards. Aaron has with 5 cards. Aaron finds another 62. How many cards does Aaron end with?","target":67.0}
+{"input":"Scott has 4 tickets. Ernest has with 9 tickets. Ernest finds another 72. How many tickets does Ernest end with?","target":81.0}
+{"input":"Diane has 37 crayons. She gets 5 more from Frances. Later, Diane buys 16 cards at the store. How many crayons does Diane have in all?","target":42.0}
+{"input":"Adam has 13 blocks. Ann has with 9 blocks. Ann finds another 44. How many blocks does Ann end with?","target":53.0}
+{"input":"Ronald has 13 blocks. Martha has with 4 blocks. Martha finds another 80. How many blocks does Martha end with?","target":84.0}
+{"input":"Albert has 9 bottle caps. Anne has with 10 bottle caps. Anne finds another 5. How many bottle caps does Anne end with?","target":15.0}
+{"input":"Evelyn has 95 marbles. She gets 9 more from Henry. Later, Evelyn buys 6 cards at the store. How many marbles does Evelyn have in all?","target":104.0}
+{"input":"David has 8 bananas. He gets 50 more from Christopher. Later, David buys 9 cards at the store. How many bananas does David have in all?","target":58.0}
+{"input":"Emily collects 63 cards. Emily's father gives Emily 7 more. Bruce has 13 apples. How many cards does Emily have?","target":70.0}
+{"input":"Carolyn starts with 47 marbles and 6 oranges. She shares 42 with Diana. How many marbles does Carolyn end with?","target":5.0}
+{"input":"Willie has 48 bananas. Charles has 14 bananas. He loses 35. How many bananas will Willie have?","target":13.0}
+{"input":"There are 55 oranges in a box. Deborah has 11 oranges in a bag. Susan takes 35 oranges out of the box. How many oranges are left in the box?","target":20.0}
+{"input":"There are 77 apples in a box. Louise has 9 apples in a bag. Scott takes 75 apples out of the box. How many apples are left in the box?","target":2.0}
+{"input":"Bruce has 75 eggs. Kimberly has 17 eggs. He loses 70. How many eggs will Bruce have?","target":5.0}
+{"input":"There are 69 erasers in a box. Jane has 15 erasers in a bag. Doris takes 54 erasers out of the box. How many erasers are left in the box?","target":15.0}
+{"input":"There are 97 erasers in a box. Ernest has 17 erasers in a bag. Mark takes 97 erasers out of the box. How many erasers are left in the box?","target":0.0}
+{"input":"There are 88 candies in a box. Lisa has 18 candies in a bag. Diana takes 6 candies out of the box. How many candies are left in the box?","target":82.0}
+{"input":"Brandon has 96 Skittles. Bonnie has 4 Skittles. He loses 9. How many Skittles will Brandon have?","target":87.0}
+{"input":"Theresa has 32 crayons. Janice has 12 crayons. She shares 13 with Nancy. How many crayons will Theresa have?","target":19.0}
+{"input":"Craig has 20 apples. Judy has 11 apples. He shares 7 with Eugene. How many apples will Craig have?","target":13.0}
+{"input":"Heather weighs 87 pounds. Emily weighs 9 pounds. Elizabeth weighs 8 pounds. How much heavier is Heather than Emily?","target":78.0}
+{"input":"George has 2 boxes of blocks. Each box holds 6 blocks and there are 5 boxes in a case. How many blocks does George have?","target":12.0}
+{"input":"Maria has 3 boxes of eggs. Each box holds 7 eggs and there are 8 boxes in a case. How many eggs does Maria have?","target":21.0}
+{"input":"Gloria has 9 boxes of tickets. Each box holds 5 tickets and there are 10 boxes in a case. How many tickets does Gloria have?","target":45.0}
+{"input":"George has 5 boxes of eggs. Each box holds 3 eggs and there are 9 boxes in a case. How many eggs does George have?","target":15.0}
+{"input":"Jacqueline has 4 boxes of erasers. Each box holds 10 erasers and there are 9 boxes in a case. How many erasers does Jacqueline have?","target":40.0}
+{"input":"Marilyn has 40 bananas that must be put away in boxes. Daniel comes to help and brings 10 cookies to share with Marilyn. If there are 8 boxes, how many bananas must go in each box?","target":5.0}
+{"input":"Rose has 9 apples and 12 erasers. If she shares the apples among 3 friends, how many apples does each friend get?","target":3.0}
+{"input":"Joshua has 40 Skittles and 6 eggs. If he shares the Skittles among 5 friends, how many Skittles does each friend get?","target":8.0}
+{"input":"Ryan has 72 marbles and 17 blocks. If he shares the marbles among 9 friends, how many marbles does each friend get?","target":8.0}
+{"input":"Ruby has 36 candies and 6 bananas. If she shares the candies among 9 friends, how many candies does each friend get?","target":4.0}
+{"input":"Scott has 56 oranges that must be put away in boxes. Terry comes to help and brings 11 cookies to share with Scott. If there are 8 boxes, how many oranges must go in each box?","target":7.0}
+{"input":"Joyce has 40 bananas that must be put away in boxes. Fred comes to help and brings 18 cookies to share with Joyce. If there are 10 boxes, how many bananas must go in each box?","target":4.0}
+{"input":"Joe has 45 oranges that must be put away in boxes. Daniel comes to help and brings 16 cookies to share with Joe. If there are 9 boxes, how many oranges must go in each box?","target":5.0}
+{"input":"Ernest has 45 bananas that must be put away in boxes. Julie comes to help and brings 3 cookies to share with Ernest. If there are 5 boxes, how many bananas must go in each box?","target":9.0}
+{"input":"Virginia has 16 eggs and 8 Skittles. If she shares the eggs among 4 friends, how many eggs does each friend get?","target":4.0}
+{"input":"Shawn has 13 blocks. Mildred has with 2 blocks. Mildred finds another 84. How many blocks does Mildred end with?","target":86.0}
+{"input":"If Anne wandered for 3 hours at 2 miles per hour. How far did Anne go?","target":6.0}
+{"input":"It took Amanda 3 hours to stroll to Kimberly's house at 2 miles per hour. How far is it between Amanda's house and Kimberly's house?","target":6.0}
+{"input":"If Stephanie ran for 3 hours at 5 miles per hour. How far did Stephanie go?","target":15.0}
+{"input":"If Charles strolled 6 miles at 3 miles per hour, how long was Charles travelling?","target":2.0}
+{"input":"It took Carl 5 hours to ride to Ralph's house at 2 miles per hour. How far is it between Carl's house and Ralph's house?","target":10.0}
+{"input":"Emily sprinted to Timothy's house. It is 10 miles from Emily's house to Timothy's house. It took Emily 2 hours to get there. How fast did Emily go?","target":5.0}
+{"input":"If Norma wandered for 5 hours at 3 miles per hour. How far did Norma go?","target":15.0}
+{"input":"If Charles strolled 6 miles at 3 miles per hour, how long was Charles travelling?","target":2.0}
+{"input":"If Anne wandered for 3 hours at 2 miles per hour. How far did Anne go?","target":6.0}
+{"input":"If Rose strolled for 4 hours at 2 miles per hour. How far did Rose go?","target":8.0}
+{"input":"It took Amanda 2 hours to stroll to Kimberly's house at 4 miles per hour. How far is it between Amanda's house and Kimberly's house?","target":8.0}
+{"input":"Martin strolled to Lawrence's house. It is 12 miles from Martin's house to Lawrence's house. It took Martin 6 hours to get there. How fast did Martin go?","target":2.0}
+{"input":"It took Amanda 5 hours to stroll to Kimberly's house at 2 miles per hour. How far is it between Amanda's house and Kimberly's house?","target":10.0}
+{"input":"Martin strolled to Lawrence's house. It is 12 miles from Martin's house to Lawrence's house. It took Martin 6 hours to get there. How fast did Martin go?","target":2.0}
+{"input":"Emily sprinted to Timothy's house. It is 10 miles from Emily's house to Timothy's house. It took Emily 2 hours to get there. How fast did Emily go?","target":5.0}
+{"input":"Jose strolled to Jane's house. It is 24 miles from Jose's house to Jane's house. It took Jose 12 hours to get there. How fast did Jose go?","target":2.0}
+{"input":"It took Katherine 3 hours to run to Louis's house at 8 miles per hour. How far is it between Katherine's house and Louis's house?","target":24.0}
+{"input":"Patrick jogged to Aaron's house. It is 14 miles from Patrick's house to Aaron's house. It took Patrick 2 hours to get there. How fast did Patrick go?","target":7.0}
+{"input":"Rachel strolled to Nicholas's house. It is 10 miles from Rachel's house to Nicholas's house. It took Rachel 5 hours to get there. How fast did Rachel go?","target":2.0}
+{"input":"If Joan bicycled 25 miles at 5 miles per hour, how long was Joan travelling?","target":5.0}
+{"input":"Mark sprinted 24 miles at 6 miles per hour. How long did Mark sprint?","target":4.0}
+{"input":"If Benjamin strolled 14 miles at 2 miles per hour, how long was Benjamin travelling?","target":7.0}
+{"input":"Mark sprinted 24 miles at 6 miles per hour. How long did Mark sprint?","target":4.0}
+{"input":"If Joan bicycled 25 miles at 5 miles per hour, how long was Joan travelling?","target":5.0}
+{"input":"Christine wandered 20 miles at 4 miles per hour. How long did Christine wander?","target":5.0}
+{"input":"Christine wandered 20 miles at 4 miles per hour. How long did Christine wander?","target":5.0}
+{"input":"James rode 80 miles at 16 miles per hour. How long did James ride?","target":5.0}
+{"input":"Juan ran 80 miles at 10 miles per hour. How long did Juan run?","target":8.0}
+{"input":"James rode 80 miles at 16 miles per hour. How long did James ride?","target":5.0}
+{"input":"Lisa flew 256 miles at 32 miles per hour. How long did Lisa fly?","target":8.0}
+{"input":"Lisa flew 256 miles at 32 miles per hour. How long did Lisa fly?","target":8.0}
+{"input":"Christopher strolled 5 miles at 4 miles per hour. How long did Christopher stroll?","target":1.25}
+{"input":"Jose wandered 4 kilometers at 2 kilometers per hour. How long did Jose wander?","target":2.0}
+{"input":"If Teresa jogged 25 kilometers at 5 kilometers per hour, how long was Teresa jogging?","target":5.0}
+{"input":"If Teresa jogged 25 kilometers at 5 kilometers per hour, how long was Teresa jogging?","target":5.0}
+{"input":"If Teresa jogged 25 kilometers at 5 kilometers per hour, how long was Teresa jogging?","target":5.0}
+{"input":"If Benjamin skated 80 kilometers at 10 kilometers per hour, how long was Benjamin skating?","target":8.0}
+{"input":"If Heather bicycled 40 kilometers at 8 kilometers per hour, how long was Heather bicycling?","target":5.0}
+{"input":"If Benjamin skated 80 kilometers at 10 kilometers per hour, how long was Benjamin skating?","target":8.0}
+{"input":"Jeremy strolled 20 kilometers at 2 kilometers per hour. How long did Jeremy stroll?","target":10.0}
+{"input":"Jeremy strolled 20 kilometers at 2 kilometers per hour. How long did Jeremy stroll?","target":10.0}
+{"input":"If Lawrence walked 4 kilometers at 3 kilometers per hour, how long was Lawrence walking?","target":1.0}
+{"input":"You have 7 balloons and your friend has 5 balloons. How many more  balloons do you have than your friend?","target":2.0}
+{"input":"2 birds were sitting on the fence. 4 more birds came to join them. How many birds are sitting on the fence?","target":6.0}
+{"input":"You have collected 7 crickets. How many more crickets do you need to collect to have 11 crickets?","target":4.0}
+{"input":"A bee has 6 legs. How many legs do 2 bees have?","target":12.0}
+{"input":"There are 6 birds and 3 nests. How many more birds are there than nests?","target":3.0}
+{"input":"There are 5 flowers and 3 bees. How many fewer bees are there than flowers?","target":2.0}
+{"input":"3 owls were sitting on the fence. 2 more owls joined them. How many owls are on the fence now?","target":5.0}
+{"input":"2 beavers were working on their home. 1 went for a swim. How many beavers are still working on their home?","target":1.0}
+{"input":"2 toucans are sitting on a tree limb. 1 more toucan joins them. How many toucans in all?","target":3.0}
+{"input":"There are 4 squirrels in a tree with 2 nuts. How many more squirrels are there than nuts?","target":2.0}
+{"input":"Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How much did she spend in all for the two toys?","target":38.0}
+{"input":"At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock Elementary School received 17 inches of snow. How much more snow  did Mrs. Hilt's house have?","target":12.0}
+{"input":"Mrs. Hilt reads 5 books a day. How many books does she read in 3 days?","target":15.0}
+{"input":"Mrs. Hilt saw 3 bugs eat 2 flowers each. How many flowers total did the bugs eat?","target":6.0}
+{"input":"Mrs. Hilt had 15 cents. She bought a pencil for 11 cents. How much money did she have left?","target":4.0}
+{"input":"Mrs. Hilt bought 2 pizzas. Each pizza had 8 slices. How many total slices of pizza did she have?","target":16.0}
+{"input":"Mrs. Hilt ate 5 apples every hour. How many apples had she eaten at the end of 3 hours?","target":15.0}
+{"input":"Mary\u2019s mom is getting ready for Mary\u2019s birthday party. She blew up 6 balloons this morning and 5 balloons this afternoon. How many balloons  did she blow up in all?","target":11.0}
+{"input":"Shelby\u2019s teacher gives out gold stars for great math work. Yesterday, Shelby earned 4 gold stars. Today, she earned 3 more. How many gold  stars did Shelby earn in all?","target":7.0}
+{"input":"The Litter Patrol picked up 10 glass bottles and 8 aluminum cans on Saturday. How many pieces of litter did they pick up altogether?","target":18.0}
+{"input":"Carson\u2019s teacher gives out gold stars for great math work. Yesterday, Carson earned 6 gold stars. Today, he earned 9 more. How many gold  stars did Carson earn in all?","target":15.0}
+{"input":"There were 10 students riding on the school bus. At the first stop, 3 students got off of the bus. How many students are left on the bus?","target":7.0}
+{"input":"Lucy went to the grocery store. She bought 12 packs of cookies and 16  packs of noodles. How many packs of groceries did she buy in all?","target":28.0}
+{"input":"Roden went to a pet shop. He bought 15 gold fish and 7 blue fish. How many fish did he buy?","target":22.0}
+{"input":"I read 21 pages of my English book yesterday. Today, I read 17 pages. What is the total number of pages did I read?","target":38.0}
+{"input":"In a school, there are 542 girls and 387 boys. How many pupils are there in that school?","target":929.0}
+{"input":"Linda has 34 candies. Chloe has 28. How many candies do they have in all?","target":62.0}
+{"input":"Gino has 63 popsicle sticks. I have 50 popsicle sticks. What is the sum of our popsicle sticks?","target":113.0}
+{"input":"Lino picked up 292 shells at the seashore in the morning and 324 shells in the afternoon. How many shells did he pick up in all?","target":616.0}
+{"input":"There were 105 parents in the program and 698 pupils, too. How many people were present in the program?","target":803.0}
+{"input":"Last Saturday, Marie sold 425 magazines and 275 newspapers. What is the total number of reading materials she sold?","target":700.0}
+{"input":"There are 12 birds on the fence. 8 more birds land on the fence. How many birds are on the fence?","target":20.0}
+{"input":"22 boys went down the slide. 13 more boys went down the slide. How many boys went down the slide?","target":35.0}
+{"input":"13 ducks are swimming in a lake. 20 more ducks come to join them. How many ducks are swimming in the lake?","target":33.0}
+{"input":"30 dogs are barking. 10 more dogs start to bark. How many dogs are barking?","target":40.0}
+{"input":"Bobby ate 26 pieces of candy. Then, he ate 17 more. How many pieces of candy did Bobby eat?","target":43.0}
+{"input":"Sandy had 26 pet fish. She bought 6 more fish. How many pet fish does Sandy have now?","target":32.0}
+{"input":"The clown blew up 47 balloons. Then he blew up 13 more balloons. How many balloons does the clown have now?","target":60.0}
+{"input":"Our class got 54 books from the library. Then we got 23 more books from the library. How many books did our class get from the library?","target":77.0}
+{"input":"Tessa has 4 apples. Anita gave her 5 more. She needs 10 apples to make a pie. Does she have enough to make a pie?","target":9.0}
+{"input":"Molly had 14 candles on her birthday cake. She grew older and got 6 more on her birthday cake. How old is Molly now?","target":20.0}
+{"input":"James ate 22 carrot sticks before dinner and 15 more after dinner. How many carrot sticks did he eat?","target":37.0}
+{"input":"Jovana filled her bucket with 5 pounds of shells. If she adds 12 more pounds of shell to fill her bucket, how many pounds does she have?","target":17.0}
+{"input":"Isha\u2019s pencil is 12 cubes long. If she gets another pencil that is 12 cubes long, how many cubes long are both pencils?","target":24.0}
+{"input":"Isabella\u2019s hair is 18 cubes long. If her hair grows 4 more inches, how long will it be?","target":22.0}
+{"input":"Mrs. Sheridan has 17 cats. Mr. Sheridan gave her 14 more cats. How many cats does Mrs. Sheridan have altogether?","target":31.0}
+{"input":"Mrs. Sheridan has 22 fish. Her sister gave her 47 more fish. How many fish does she have now?","target":69.0}
+{"input":"Mrs. Heine is buying Valentine\u2019s Day treats for her 2 dogs. If she wants to buy them 3 heart biscuits each, how many biscuits does she need to  buy?","target":6.0}
+{"input":"Cade had 87 marbles. He gave 8 to Dylan. How many does he have left?","target":79.0}
+{"input":"Michael has some fish in his fish tank. Ben gave him 18 more fish. Now he has 49. How many fish did he have to begin with?","target":31.0}
+{"input":"Alyssa had 129 cookies. Aiyanna has 140. How many more cookies does Aiyanna have than Alyssa?","target":11.0}
+{"input":"Daniel had some noodles. He gave 12 noodles to William. Now Daniel only has 54 noodles. How many noodles did Daniel have to begin with?","target":66.0}
+{"input":"Hayley had 25 meatballs on her plate. Kirsten stole some of her meatballs. Now she has 11 meatballs on her plate. How many meatballs  did Kirsten steal?","target":14.0}
+{"input":"Isabella\u2019s hair is 18 inches long. If she gets a haircut and now her hair is 9 inches long, how much of Isabella\u2019s hair got cut off?","target":9.0}
+{"input":"Isabella\u2019s hair is 18 inches long. By the end of the year her hair is 24 inches long. How much hair did she grow?","target":6.0}
+{"input":"Jovana had 5 pounds of shells in her bucket. She added some shells and now has 28 pounds of shells. How many pounds did she add?","target":23.0}
+{"input":"Isha\u2019s pencil is 31 inches long. If she sharpens it, now her pencil is 14 inches long. How much did she sharpen off of her pencil?","target":17.0}
+{"input":"Mrs. Sheridan has 11 cats. How many more cats does Mrs. Sheridan need to have 43 cats?","target":32.0}
+{"input":"Mrs. Sheridan has 11 cats. Mrs. Garrett has 24 cats. How many more cats does Mrs. Garrett have than Mrs. Sheridan?","target":13.0}
+{"input":"Mrs. Wong had 30 Valentines. She gave 8 Valentines to her children. How many does she have left?","target":22.0}
+{"input":"Mrs. Franklin had 58 Valentines. Mrs. Franklin gave some to her students. Now she has 16. How many Valentines did Mrs. Franklin give  to her students?","target":42.0}
+{"input":"Mrs. Snyder made 86 heart cookies. She made 36 red cookies and the rest are pink. How many pink cookies did she make?","target":50.0}
+{"input":"Mrs. Santiago has 58 red roses. Mrs. Garrett has 24. How many more red roses does Mrs. Santiago have than Mrs. Garrett?","target":34.0}
+{"input":"14 birds were sitting in a tree. 21 more birds flew up to the tree. How many birds were there altogether in the tree?","target":35.0}
+{"input":"29 birds were sitting in a tree. Some more fly up to the tree. Then there were 42 birds in the tree. How many more flew up to the tree?","target":13.0}
+{"input":"Cindy\u2019s mom baked 41 cookies. Paul\u2019s dad baked 38 cookies. They both brought them to school for a party. How many cookies did they  have altogether?","target":79.0}
+{"input":"18 children were riding on the bus. At the bus stop, some more children got on the bus. Then there were 25 children altogether on the bus. How  many children got on the bus at the bus stop?","target":7.0}
+{"input":"Misha has 34 dollars. How many more dollars does she have to earn to have 47 dollars?","target":13.0}
+{"input":"There were 28 girls and 35 boys on the playground at recess. How many children were there in all?","target":63.0}
+{"input":"There were 44 boys and 53 girls on the playground at recess. How many children were on the playground in all?","target":97.0}
+{"input":"There were 58 geese and 37 ducks in the marsh. How many birds were there in all?","target":95.0}
+{"input":"Paul had 42 strawberries in his basket. He picked 78 more strawberries. How many strawberries did he have then?","target":120.0}
+{"input":"Robin had 18 pieces of gum. Her brother gave her some more pieces. Now Robin has 44 pieces in all. How many pieces of gum did Robin's  brother give her?","target":26.0}
+{"input":"Bobby has 142 books. Kristi has 78 books. How many more books does Bobby have than Kristi?","target":64.0}
+{"input":"Tommy had some balloons. His mom gave him 34 more balloons for his birthday. Then, Tommy had 60 balloons. How many balloons did  Tommy have to start with?","target":26.0}
+{"input":"There were 14 kids on the soccer field. 22 kids decided to join in. Now how many kids are on the soccer field?","target":36.0}
+{"input":"Jane has 28 old, brown sheets of drawing paper and 27 old, yellow sheets of drawing paper. How many pieces of drawing paper does she  have?","target":55.0}
+{"input":"Mikey had 356 leaves. Some of her leaves blew away. Now she has 112 leaves left. How many of her leaves blew away?","target":244.0}
+{"input":"Marcus has 210 baseball cards. He has 58 more than Carter. How many baseball cards does Carter have?","target":152.0}
+{"input":"Gavin has 23 shirts. 6 are blue the rest are green. How many green shirts does Gavin have?","target":17.0}
+{"input":"Ethan has 31 presents. Alissa has 22 more than Ethan. How many presents does Alissa have?","target":53.0}
+{"input":"On the first day of the week Pat had 39 stickers. Pat earned 22 more during the week. How many stickers did Pat have at the end of the  week?","target":61.0}
+{"input":"Kelly had 56 apples. How many more apples does Kelly need to pick to have 105 apples altogether?","target":49.0}
+{"input":"Todd has some gum. Steve gave him 16 more pieces of gum. Now Todd has 54 pieces of gum. How many pieces did Todd have to start  with?","target":38.0}
+{"input":"Josh had 142 pencils. He gave 31 pencils to Dorothy. How many pencils does Josh have left?","target":111.0}
+{"input":"Nell collects baseball cards. She had 304 cards. She gave some of her cards to Jeff and now has 276 cards left. How many cards did Nell give  to Jeff?","target":28.0}
+{"input":"Sarah had some trucks. She gave 13 to Jeff, and now she has 38 trucks left. How many trucks did Sarah have to start with?","target":51.0}
+{"input":"There are 40 boys and some girls on the playground. There are 117 children altogether. How many girls are on the playground?","target":77.0}
+{"input":"Megan had 49 markers. Robert gave her 39 more markers. How many markers does Megan have altogether?","target":88.0}
+{"input":"Each CD rack holds 8 CDs. A shelf can hold 4 racks. How many total CDs can fit on the shelf?","target":32.0}
+{"input":"Carla has some marbles. She bought 134 marbles. Now she has 187 marbles. How many did she start with?","target":53.0}
+{"input":"Kelly has 50 Nintendo games. How many does she need to give away so that she will have 35 games left?","target":15.0}
+{"input":"Connie had some marbles. She gave 73 to Juan. Now she has 70 marbles left. How many did she have to start with?","target":143.0}
+{"input":"Connie has 41 red markers and 64 blue markers. How many markers does she have altogether?","target":105.0}
+{"input":"Iesha has 58 books. 19 are about school and the rest are about sports. How many books about sports does Iesha have?","target":39.0}
+{"input":"James has 232 balloons. Amy has 101 balloons. How many more balloons does James have than Amy?","target":131.0}
+{"input":"Sean has 45 whistles. He has 32 more whistles that Charles. How many whistles does Charles have?","target":13.0}
+{"input":"Connie has 39 marbles. Juan has 25 more marbles than Connie. How many marbles does Juan have?","target":64.0}
+{"input":"Joe had 50 toy cars. If he gets 12 more cars, how many cars will he have then?","target":62.0}
+{"input":"There are 64 pigs in the barn. Some more come to join them. Now there are 86 pigs. How many pigs came to join  them?","target":22.0}
+{"input":"Rosa had 67 flowers. Andre gave her some more flowers. Now, Rosa has 90 flowers. How many flowers did Andre give to  Rosa?","target":23.0}
+{"input":"Adolfo made a tower with 35 blocks. He added some more blocks and now he has 65 blocks. How many did he have to  add?","target":30.0}
+{"input":"Josh had 16 marbles in his collection. He lost 7 marbles. How many marbles does he have now?","target":9.0}
+{"input":"Megan has 19 seashells. How many more seashells does she need to find to have 25 seashells in her collection?","target":6.0}
+{"input":"Brad has 17 balloons. 8 balloons are red and the rest are green. How many green balloons does Brad have?","target":9.0}
+{"input":"There are 38 books on the shelf. Marta put 10 more books on the shelf. How many books are on the shelf now?","target":48.0}
+{"input":"A bee has 6 legs. How many legs do 8 bees have?","target":48.0}
+{"input":"Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice cream cones cost?","target":198.0}
+{"input":"Mrs. Hilt wants to make a border around her garden. She needs 125 rocks to complete the border. She has 64 rocks. How many more rocks  does she need to complete the border?","target":61.0}
+{"input":"Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32 miles and then stopped for gas. Her sister put 28 gallons of gas in the  car. How many miles did they have left to drive?","target":46.0}
+{"input":"Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much money did she pay for all of the hot dogs?","target":300.0}
+{"input":"Mrs. Hilt has 50 cents. A pencil costs 5 cents. How many pencils can she buy with the money she has?","target":10.0}
+{"input":"Mrs. Hilt bought 3 pizzas for $8 each. What was the total amount she paid for the three pizzas?","target":24.0}
+{"input":"The Hawks scored 3 touchdowns worth 7 points each. How many points do they have?","target":21.0}
+{"input":"Zach scored 42 points in the football game. Ben scored 21 points. How many more points did Zach score?","target":21.0}
+{"input":"Kate has 223 pennies. John has 388 pennies. How many more pennies does John have?","target":165.0}
+{"input":"Tim had 50 cents. He paid 45 cents for a candy bar. How much change will he get?","target":5.0}
+{"input":"Mark has 13 trees in his backyard. If he plants 12 more, how many trees will he have?","target":25.0}
+{"input":"Kim has 4 cousins. She wants to give each cousin 5 pieces of gum. How much gum will she need?","target":20.0}
+{"input":"Dan has $3.00. He bought a candy bar for $1.00. How much money is left?","target":2.0}
+{"input":"5 boats are in the lake. Each boat has 3 people. How many people are on boats in the lake?","target":15.0}
+{"input":"Charlie has 31 more snowballs than Lucy. She has 19 snowballs. How many does Charlie have?","target":50.0}
+{"input":"Randy has 78 blocks. He uses 19 blocks to build a tower. How many blocks are left?","target":59.0}
+{"input":"Bryan has 50 skittles. Ben has 20 M&amp;M\u2019s. Who has more? How many more does he have?","target":30.0}
+{"input":"Paul got a box of 479 crayons for his birthday. At the end of the school  year, he only had 134 left. How many crayons had been lost or given  away?","target":345.0}
+{"input":"179 birds were sitting in a tree. 38 more birds flew up to the tree. How many birds were there altogether in the tree?","target":217.0}
+{"input":"Cindy\u2019s mom baked 1215 cookies. Paul\u2019s dad baked 1112 cookies. They both brought them to school for a party. How many cookies did  they have altogether?","target":2327.0}
+{"input":"231 birds were sitting in a tree. Some more fly up to the tree. Then there were 312 birds in the tree. How many more fly up to the tree?","target":81.0}
+{"input":"64 children were riding on the bus. At the bus stop, some more children got on the bus. Then there were 78 children altogether on the bus. How  many children got on the bus at the bus stop?","target":14.0}
+{"input":"Misha has 34 dollars. How many dollars does she have to earn to have 47 dollars to buy a dog?","target":13.0}
+{"input":"Elisa has 37 dollars. How many more dollars does she have to earn to have 53 dollars?","target":16.0}
+{"input":"James had 39 stickers. He got some more stickers for his birthday. Then he had 61 stickers. How many stickers did James get for his  birthday?","target":22.0}
+{"input":"There were 27 boys and 35 girls on the playground at recess. How many children were on the playground at recess?","target":62.0}
+{"input":"There were 58 geese and 37 ducks in the marsh. How many birds were in the marsh?","target":95.0}
+{"input":"Paul had 28 strawberries in his basket. He picked 35 more strawberries. How many strawberries did he have then?","target":63.0}
+{"input":"Gary had 73 dollars. He spent 55 dollars on a pet snake. How many dollars did Gary have left?","target":18.0}
+{"input":"There are 397 butterflies. Each butterfly has 12 black dots and 17 yellow dots. How many black dots are there in all?","target":4764.0}
+{"input":"How many cookies would you have if you had 37 bags of cookies with 19 cookies in each bag?","target":703.0}
+{"input":"How much would 136 pieces of bubble gum cost if each piece costs 18 cents?","target":2448.0}
+{"input":"For the fifth grade play, the chairs have been put into 27 rows with 16 chairs in each row. How many chairs have been put out for the play?","target":432.0}
+{"input":"The Ferris wheel in Paradise Park has 14 seats. Each seat can hold 6 people. How many people can ride the Ferris wheel at the same time?","target":84.0}
+{"input":"A garden has 52 rows and 15 columns of bean plans. How many plants are there in all?","target":780.0}
+{"input":"A sandbox is 312 centimeters long and 146 centimeters wide. How many square centimeters of ground does the sandbox cover?","target":45552.0}
+{"input":"Sarah picked 45 apples. Her brother picked 9 apples. How many times as many apples did Sarah pick?","target":5.0}
+{"input":"There are 261 fishbowls. Each fishbowl has 23 fish. How many fish are there?","target":6003.0}
+{"input":"We ordered 21 pizzas. Each pizza has 8 slices. How many slices of pizza are there altogether?","target":168.0}
+{"input":"Emily collected eggs from the hen and put them into 303 baskets. She put 28 eggs into each basket. How many eggs did Emily collect?","target":8484.0}
+{"input":"There were 150 book shelves. Each book shelf had 15 books. How many books were on the shelves?","target":2250.0}
+{"input":"There are 84 leaves. There are 139 ladybugs on each leaf. How many ladybugs are there in all?","target":11676.0}
+{"input":"There are 37 baskets. There are 17 apples in each basket. How many apples are there in all?","target":629.0}
+{"input":"There are 544 pots. Each pot has 32 flowers in it. How many flowers are there in all?","target":17408.0}
+{"input":"Your class is having a pizza party. You buy 5 pizzas. Each pizza has 4 slices. How many slices is that altogether?","target":20.0}
+{"input":"Beth has 4 packs of crayons. Each pack has 10 crayons in it. She also has 6 extra crayons. How many crayons does Beth have altogether?","target":40.0}
+{"input":"Ted has 15 candy bars. He wants to put them into 5 bags so there are the same number of candy bars in each bag. How many candy bars  should go in each bag?","target":3.0}
+{"input":"A candy store has 6 boxes of chocolates. Each box has 500 pieces. How many pieces are there altogether in the boxes?","target":3000.0}
+{"input":"Martha bought 18 small cakes. She has 3 children. She would like to divide the cakes among her children so that each child gets the same  amount. How many cakes would each child get?","target":6.0}
+{"input":"Julian is writing a comic book. His story has 143 frames in all. If he wants to put exactly 11 frames on each page, how many pages would  he have?","target":13.0}
+{"input":"Jesse\u2019s room is 12 feet long and 8 feet wide. How much carpet does she need to cover the whole floor?","target":96.0}
+{"input":"There are 5 people on the Green Bay High track team. If a relay race is 150 meters long, how far will each  team member have to run?","target":30.0}
+{"input":"It takes 4 feet of cotton to make a tee-shirt. How many tee-shirts can be made with 60 feet of material?","target":15.0}
+{"input":"Lukas averages 12 points per game in basketball. How many points would he score in 5 games?","target":60.0}
+{"input":"My car gets 20 miles per gallon. How many miles can I drive on 5 gallons of gas?","target":100.0}
+{"input":"It takes 7 minutes to bake one pan of cookies. How long will it take to bake 4 pans of cookies?","target":28.0}
+{"input":"My car gets 20 miles per gallon of gas. If Grandma\u2019s house is 100 miles away, how many gallons of gas would it take to get to her house?","target":5.0}
+{"input":"Melissa scored 120 points in each game. How many points did she score in 10 games?","target":1200.0}
+{"input":"Johnny practiced for the track team and ran 3 laps per minute. How many minutes did it take Johnny to run 10 laps?","target":3.33333}
+{"input":"Our watermelons have 100 seeds each. If we have 4 watermelons, how many seeds should there be when all seeds are taken out of the  watermelons?","target":400.0}
+{"input":"Robin has 9 packages of gum. There are 15 pieces in each package. How many pieces of gum does Robin have?","target":135.0}
+{"input":"63 people are going to the zoo. There are 3 cars to take people to the zoo. How many will go in each car if the same number go in each car?","target":21.0}
+{"input":"I have 80 cents to buy candy. If each gumdrop costs 4 cents, how many gumdrops can I buy?","target":20.0}
+{"input":"Maggi had 3 packages of cupcakes. There are 4 cupcakes in each package. She ate 5 cupcakes. How many are left?","target":12.0}
+{"input":"58 children are taking a bus to the zoo. They sit 2 children in every seat. How many seats will the children need in all?","target":29.0}
+{"input":"Marlee has 12 guests coming to her Halloween party. Each table will hold 3 guests. How many tables will she need?","target":4.0}
+{"input":"Warren has 252 guests coming to his party. Each table will hold 4 guests. How many tables will he need?","target":63.0}
+{"input":"Arthur baked 35 muffins. How many more muffins does Arthur have to bake to have 83 muffins?","target":48.0}
+{"input":"There are 10 stickers on a page. If you have 22 pages of stickers, how many stickers do you have?","target":220.0}
+{"input":"There are 96 cupcakes for 8 children to share. How much will each person get if they share the cupcakes equally?","target":12.0}
+{"input":"Jose has 85 peanuts. Kenya has 48 more than Jose. How many peanuts does Kenya have?","target":133.0}
+{"input":"White t-shirts can be purchased in packages of 6. If Mom buys 71 packages, how many white t-shirts will she have?","target":426.0}
+{"input":"I have 648 pencils. If I put 4 pencils in each pencil box, how many pencil boxes will I fill?","target":162.0}
+{"input":"Uncle Dave bought 143 ice cream sandwiches. If he wants to give them to his 11 hungry nieces, how many can each niece get?","target":13.0}
+{"input":"Megan had 217 markers. Robert gave her 109 more markers. How many markers does Megan have altogether?","target":326.0}
+{"input":"A DVD book holds 126 DVDs. There are 81 DVDs already in the book. How many more DVDs can be put in the book?","target":45.0}
+{"input":"Carla has some marbles. She bought 489 marbles. Now she has 2778 marbles all together. How many did she start with?","target":2289.0}
+{"input":"Kelly has 121 Nintendo games. How many does she need to give away so that she will have 22 games left?","target":99.0}
+{"input":"Connie had some marbles. She gave 183 to Juan. Now she has 593 marbles left. How many did she have to start with?","target":776.0}
+{"input":"Connie has 2315 red markers and 1028 blue markers. How many markers does she have altogether?","target":3343.0}
+{"input":"Iesha has 344 books. 136 are about school and the rest are about sports. How many books about sports does Iesha have?","target":208.0}
+{"input":"Sean has 223 whistles. He has 95 more whistles that Charles. How many whistles does Charles have?","target":128.0}
+{"input":"Robin has 27 packages of gum. There are 18 pieces in each package. How many pieces of gum does Robin have?","target":486.0}
+{"input":"Adam has $5.00 to buy an airplane that costs $4.28. How much change will he get?","target":0.72}
+{"input":"If each ball costs $1.54, how much must Kyoko pay for 3 balls?","target":4.62}
+{"input":"Mr. Guzman bought 48 doughnuts packed equally into 4 boxes. How many doughnuts were in each box?","target":12.0}
+{"input":"The Sumata family took a 5-day vacation by car. Each day they drove 250 miles. How many total miles did they drive?","target":1250.0}
+{"input":"The town of Milburg has 5256 grown-ups and 2987 children. How many people live in Milburg?","target":8243.0}
+{"input":"Lisa rented 4 DVDs for $4.80. How much did each DVD cost to rent?","target":1.2}
+{"input":"There were 3409 pieces of candy in a jar. If 145 pieces were red and the rest were blue, how many were blue?","target":3264.0}
+{"input":"Third-grade students went to a concert in 8 buses. Each bus took 45 students. How many students went to the concert?","target":360.0}
+{"input":"There are 124 students making 3 stars each for the school wall. How many stars will they make all together?","target":372.0}
+{"input":"6 students were sitting at each table in the lunchroom. There are 34 tables. How many students were sitting in the lunchroom?","target":204.0}
+{"input":"Tyler had 15 dogs. Each dog had 5 puppies. How many puppies does Tyler now have?","target":75.0}
+{"input":"The farmer had 127 apples. He gave 88 apples to his neighbor. How many apples does he have now?","target":39.0}
+{"input":"Jill invited 37 people to her birthday party. They each ate 8 pieces of pizza. How many pieces of pizza did they eat?","target":296.0}
+{"input":"Mrs. Hilt uses 2 ounces of detergent to wash a pound of clothes. How many ounces of soap will she use to wash 9 pounds of clothes?","target":18.0}
+{"input":"Mrs. Hilt went to a concert. A total of 65899 people attended the concert. The next week, she went to a second concert, which had 119  more people in attendance. How many people were at the second  concert?","target":66018.0}
+{"input":"Mrs. Hilt baked pies last weekend for a holiday dinner. She baked 16 pecan pies and 14 apples pies. If she wants to arrange all of the pies in  rows of 5 pies each, how many rows will she have?","target":30.0}
+{"input":"Mrs. Hilt needs to share $3.75 equally among 3 total people. How much money will each person get?","target":1.25}
+{"input":"Mrs. Hilt read 4 books. Each book had 17 chapters in it. How many chapters did Mrs. Hilt read?","target":68.0}
+{"input":"Mrs. Hilt saw 144 bees in the hive. The next day she saw 3 times that many. How many bees did she see on the second day?","target":432.0}
+{"input":"Mrs. Hilt measured the distance from her desk to the water fountain. It was 30 feet. How many feet will Mrs. Hilt walk on her trips to the  fountain if she goes to the water fountain 4 times today?","target":120.0}
+{"input":"Lucy has an aquarium with 212 fish. She wants to buy 68 more fish. How many fish would Lucy have then?","target":280.0}
+{"input":"Lucy has 212 fish. How many more fish does she need to buy to have 280 fish?","target":68.0}
+{"input":"Rupert and Ronald aced their math test. So their mother bought for them a wonderful trampoline yesterday. Ronald jumped 157 times on  the trampoline. Rupert jumped 86 more times than Ronald. How many  times did they jump altogether?","target":243.0}
+{"input":"Harry Hound had a terrible earache yesterday. When I peered into his ears yesterday, I found 36 frisky fleas having a party in his right ear and  85 baby fleas sleeping peacefully in his left ear. I cleaned out Harry  Hound's ears. How many fleas perished?","target":121.0}
+{"input":"A pet supply store has 600 bags of dog food and 327 bags of cat food. How many more bags of dog food are there than cat food?","target":273.0}
+{"input":"532 people are watching a movie in a theater. The theater has 750 seats. How many seats are empty in the theater?","target":218.0}
+{"input":"Each bag contains 23 pounds of oranges. How many pounds of oranges are in 45 bags?","target":1035.0}
+{"input":"Ellen went to a garage sale to buy chairs. Each chair cost 15 dollars.  How much money did Ellen spend for the 12 chairs she bought?","target":180.0}
+{"input":"Albert has two snakes. The garden snake is 10 inches long. The boa constrictor is 7 times longer than the garden snake. How long is the boa  constrictor?","target":70.0}
+{"input":"Albert\u2019s cabbage patch has 12 rows of cabbage. In each row, there are 15 heads of cabbage. How many heads of cabbage does Albert have in  all?","target":180.0}
+{"input":"Marie can bike at a speed of 12 miles an hour. How far can she bike in 31 hours?","target":372.0}
+{"input":"Tammy drove 55 miles in one hour. At that rate, how far can she drive in 36 hours?","target":1980.0}
+{"input":"It takes 4 apples to make 1 pie. How many apples does it take to make 504 pies?","target":2016.0}
+{"input":"You have 24 cookies and want to share them equally with 6 people. How many cookies would each person get?","target":4.0}
+{"input":"You are reading a book with 120 pages. If you want to read the same number of pages each night, how many would you have to read each  night to finish in 10 days?","target":12.0}
+{"input":"A cereal box holds 18 cups of cereal. Each serving is 2 cups. How many servings are in the whole box?","target":9.0}
+{"input":"A box of books weighs 42 pounds. Each book weighs 3 pounds. How many books are there in the box?","target":14.0}
+{"input":"Sue\u2019s mother made 75 cookies. She put the cookies in bags, with 3 cookies in each bag. How many bags could she fill up?","target":25.0}
+{"input":"Frank worked 8 hours on the first 4 days of the week. How many hours did he work in all?","target":32.0}
+{"input":"Sue\u2019s family went on vacation. Her mom drove the car at 60 mph. They camped at a campground after traveling for 5 hours. How far was the  campground from their home?","target":300.0}
+{"input":"Brett drove 55 miles every hour. How many miles would he drive in 8 hours?","target":440.0}
+{"input":"A perfect score is 21 points. How many points would you have after 3 perfect games in a row?","target":63.0}
+{"input":"Brian\u2019s car gets 20 miles per gallon. On his last trip, he used 3 gallons of gas. How many miles did he travel on his last trip?","target":60.0}
+{"input":"Bob\u2019s car gets 10 kilometers per gallon. How far can he drive on 10 gallons of gas?","target":100.0}
+{"input":"Each cup contains 8 ounces. How many ounces are in 33 cups?","target":264.0}
+{"input":"A chocolate chip cookie recipe calls for 2 cups of chocolate chips. You want to make 23 recipes for a bake sale. How many cups of chocolate  chips will be needed to make all the cookie recipes?","target":46.0}
+{"input":"I have a pet golden retriever. Each year he gains 11 pounds. He is 8 years old. How many pounds does he weigh?","target":88.0}
+{"input":"Mary\u2019s car gets 20 miles per gallon of gas. How far can she drive on 14 gallons of gas?","target":280.0}
+{"input":"I walked 2 miles in 1 hour for Relay for Life. If I maintained this pace for the 8 hours I walk, how many miles total will I walk?","target":16.0}
+{"input":"I walk 1 mile every 15 minutes. I walked 3 miles. How many minutes did it take me ?","target":45.0}
+{"input":"Lansing has 25 elementary schools. There are 247 students in each school. How many elementary students are there altogether in Lansing?","target":6175.0}
+{"input":"256 students are going to the zoo. They have to be divided into groups so that each teacher has one group. There are 8 teachers. How many  students will be in each group?","target":32.0}
+{"input":"A fruit farm packs oranges in boxes that hold 10 each. One day it packs 2650 oranges. How many boxes did they use?","target":265.0}
+{"input":"You want to give your baseball cards to your 5 best friends. You have 455 baseball cards. How many would each get, if you share them  equally?","target":91.0}
+{"input":"Ellen had 2080 Legos, but she lost 17 Legos. How many Legos does she have now?","target":2063.0}
+{"input":"Arthur baked 115 muffins. James baked 12 times as many. How many muffins did James bake?","target":1380.0}
+{"input":"There are 14240 books in a library. They are arranged on shelves that hold 8 books each. How many shelves are in the library?","target":1780.0}
+{"input":"219 people are going to the zoo, and there are 3 buses to take people. How many will go in each bus if the same number go in each one and  all of the people go to the zoo?","target":73.0}
+{"input":"I have 224 cents to buy candy. If each piece of bulk candy costs 8 cents, how many gumdrops can I buy?","target":28.0}
+{"input":"My dog had some bones. Then, he dug up 367 bones. Now he has 860 bones. How many bones did he start with?","target":493.0}
+{"input":"Jazmin had 1209 dolls and Geraldine had 2186 dolls. If they put their dolls together, how many would they have?","target":3395.0}
+{"input":"Mariela was in the hospital and she got 403 get well cards from around the country. When she got home she got 287 more cards from friends  and family. How many get well cards did Mariela get?","target":690.0}
+{"input":"Cody is 14 years old. His grandmother is 6 times as old as he is. How old is Cody\u2019s grandmother?","target":84.0}
+{"input":"Jorge scored 156 goals playing soccer last season. This season he scored 187 goals. What is the total number of goals Jorge scored?","target":343.0}
+{"input":"Ceasar needs to read a 563 page book for school. He has already read 147 pages. How many pages does he have left to read?","target":416.0}
+{"input":"Omar and Karen made egg rolls to share at the school potluck. Omar rolled 219 egg rolls. Karen rolled 229 egg rolls. What is the total number  of egg rolls Omar and Karen rolled?","target":448.0}
+{"input":"Beka flew 873 miles to visit her aunt. Jackson flew 563 miles to visit his aunt. How many more miles did Beka fly than Jackson?","target":310.0}
+{"input":"Darius drove 679 miles to visit his grandmother. Julia drove 998 miles to visit her grandmother. What is the total number of miles Darius and Julia  drove?","target":1677.0}
+{"input":"Isabel bought 900 pieces of paper. She used 156 pieces of the paper. How many pieces of paper does she have left?","target":744.0}
+{"input":"Mrs. Hilt looked at her car's odometer before a trip. The odometer showed that she had traveled 212.3 miles. When she stopped for lunch,  the odometer read 372.0. How many miles had she traveled?","target":159.7}
+{"input":"Mrs. Hilt impressed 2436 fans at the basketball game on Friday. If the fans were seated in equal groups on 3 sets of bleachers, how many  fans were on each set?","target":812.0}
+{"input":"Your class had a pizza party. 0.375 of a pizza was left over, and 0.5 of another pizza was left over. You put them both into one box. How much  pizza do you have altogether?","target":0.875}
+{"input":"A cake recipe requires 0.6 cup of sugar for the frosting and 0.2 cup of sugar for the cake. How much sugar is that altogether?","target":0.8}
+{"input":"After a party, 0.625 of the cake is left over. That night, big brother eats 0.25 of the cake. How much is left over after that?","target":0.375}
+{"input":"You go out for a long walk. You walk 0.75 mile and then sit down to take a rest. Then you walk 0.25 of a mile. How far did you walk altogether?","target":1.0}
+{"input":"John needs $2.50. He has $0.75. How much more money does he need?","target":1.75}
+{"input":"Jane buys an apple for $0.75 and pays with a $5.00 bill. How much change will she get?","target":4.25}
+{"input":"John walks 0.7 miles to school and Nina walks 0.4 miles to school. How much farther does John walk than Nina?","target":0.3}
+{"input":"One pencil weighs 28.3 grams. How much do 5 pencils weigh?","target":141.5}
+{"input":"Andrew spent 3 day working on his Science report. He worked for 2.5 hours each day. How many hours did he work?","target":7.5}
