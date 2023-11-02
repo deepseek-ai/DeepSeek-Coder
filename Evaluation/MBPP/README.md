@@ -1,6 +1,6 @@
 ## 1. Introduction
 
-We provide a test script to evaluate the performance of the **deepseek-coder** model on code generation benchmarks with 3-shot setting, **[MBPP]**(https://huggingface.co/datasets/mbpp).
+We provide a test script to evaluate the performance of the **deepseek-coder** model on code generation benchmarks, [**MBPP**](https://huggingface.co/datasets/mbpp), with 3-shot setting.
 
 
 
