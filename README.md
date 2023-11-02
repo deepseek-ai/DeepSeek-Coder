@@ -1,5 +1,5 @@
 <p align="center">
-<img width="1000px" alt="DeepSeek Coder" src="pictures/logo.jpeg">
+<img width="1000px" alt="DeepSeek Coder" src="pictures/logo.png">
 </p>
 <p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder] | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> </p>
 <hr>
