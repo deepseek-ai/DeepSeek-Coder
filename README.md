@@ -67,6 +67,8 @@ Before proceeding, you'll need to install the necessary dependencies. You can do
 pip install -r requirements.txt
 ```
 Here are some examples of how to use our model.
+
+A demo is also available on the [🤗 Hugging Face Space](https://huggingface.co/spaces/deepseek-ai/deepseek-coder-7b-instruct) (thanks to all the HF team for their support).
 #### 1）Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
