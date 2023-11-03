@@ -5,7 +5,7 @@
 <hr>
 
 
-### 1. Introduction of Deepseek Coder
+### 1. Introduction of DeepSeek Coder
 
 Deepseek Coder comprises a series of code language models trained on both 87% code and 13% natural language in English and Chinese, with each model pre-trained on 2T tokens. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and a extra fill-in-the-blank task, to support  project-level code completion and infilling. For coding capabilities, Deepseek Coder achieves state-of-the-art performance among open-source code models on multiple programming languages and various benchmarks. 
 
@@ -62,7 +62,11 @@ More evaluation details can be found in the [Detailed Evaluation](#5-detailed-ev
 
 
 ### 4. How to Use
-Here give some examples of how to use our model.
+Before proceeding, you'll need to install the necessary dependencies. You can do this by running the following command:
+```
+pip install -r requirements.txt
+```
+Here are some examples of how to use our model.
 #### 1）Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
