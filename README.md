@@ -70,7 +70,7 @@ import torch
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True).cuda()
 input_text = "#write a quick sort algorithm"
-inputs = tokenizer(input_text, return_tensors="pt").cuda()
+inputs = tokenizer(input_text, return_tensors="pt").to(model.device)
 outputs = model.generate(**inputs, max_length=128)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
@@ -108,7 +108,7 @@ input_text = """<｜fim▁begin｜>def quick_sort(arr):
         else:
             right.append(arr[i])
     return quick_sort(left) + [pivot] + quick_sort(right)<｜fim▁end｜>"""
-inputs = tokenizer(input_text, return_tensors="pt").cuda()
+inputs = tokenizer(input_text, return_tensors="pt").to(model.device)
 outputs = model.generate(**inputs, max_length=128)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True)[len(input_text):])
 ```
@@ -231,7 +231,7 @@ from model import IrisClassifier as Classifier
 def main():
     # Model training and evaluation
 """
-inputs = tokenizer(input_text, return_tensors="pt").cuda()
+inputs = tokenizer(input_text, return_tensors="pt").to(model.device)
 outputs = model.generate(**inputs, max_new_tokens=140)
 print(tokenizer.decode(outputs[0]))
 ```
