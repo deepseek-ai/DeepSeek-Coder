@@ -55,7 +55,6 @@ We report experimental results here for several models. We set the maximum input
 | GPT-4               | -    | **80.0%**  |
 | | | | |  |  |  |  |  |  | |
 | DeepSeek-Coder-Instruct | 1.3B  | 49.4%      |
-| DeepSeek-Coder-Instruct  | 5.7B  | 62.4%     |
 | DeepSeek-Coder-Instruct  | 6.7B  | 65.4%     |
 | DeepSeek-Coder-Instruct  | 33B | **70.0%**     | 
 
