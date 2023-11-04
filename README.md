@@ -158,6 +158,20 @@ print("Sorted array:", quick_sort(arr))
 This code works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The pivot element is then in its final position. The process is then repeated for the sub-arrays.
 ```
 
+If you don't want to use the provided api `apply_chat_template` which loads the template from `tokenizer_config.json`, you can use the following template to chat with our model.
+```
+You are an AI programming assistant, utilizing the Deepseek Coder model, developed by Deepseek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
+### Instruction:
+['content']
+### Response:
+['content']
+<|EOT|>
+### Instruction:
+['content']
+### Response:
+
+```
+
 #### 4）Repository Level Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
