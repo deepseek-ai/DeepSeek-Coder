@@ -203,7 +203,7 @@ def load_data():
 
 def evaluate_predictions(y_test, y_pred):
     return accuracy_score(y_test, y_pred)
-#model.py
+# model.py
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -242,7 +242,7 @@ class IrisClassifier(nn.Module):
             outputs = self(X_test)
             _, predicted = outputs.max(1)
         return predicted.numpy()
-#main.py
+# main.py
 from utils import load_data, evaluate_predictions
 from model import IrisClassifier as Classifier
 
@@ -255,7 +255,7 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ---
-In the following scenario, the DeepSeek-Coder 6.7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to correctly complete the **main** function in`main.py` file for model training and evaluation.
+In the following scenario, the DeepSeek-Coder-6.7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to correctly complete the **main** function in `main.py` file for model training and evaluation.
 
 ![Completion GIF](pictures/completion_demo.gif)
 
