@@ -7,7 +7,7 @@
 
 ### 1. Introduction of DeepSeek Coder
 
-Deepseek Coder is composed of a series of code language models, each trained from scratch on 2T tokens, with a composition of 87% code and 13% natural language in both English and Chinese. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and an extra fill-in-the-blank task, to support project-level code completion and infilling. For coding capabilities, Deepseek Coder achieves state-of-the-art performance among open-source code models on multiple programming languages and various benchmarks.
+DeepSeek Coder is composed of a series of code language models, each trained from scratch on 2T tokens, with a composition of 87% code and 13% natural language in both English and Chinese. We provide various sizes of the code model, ranging from 1B to 33B versions. Each model is pre-trained on project-level code corpus by employing a window size of 16K and an extra fill-in-the-blank task, to support project-level code completion and infilling. For coding capabilities, DeepSeek Coder achieves state-of-the-art performance among open-source code models on multiple programming languages and various benchmarks.
 
 <p align="center">
 <img src="pictures/result.png" alt="result" width="70%">
@@ -42,7 +42,7 @@ More evaluation details can be found in the [Detailed Evaluation](#5-detailed-ev
 
 #### Data Creation
 
-- Step 1: Collecting code data from GitHub and apply the same filtering rules as [StarcoderData](https://github.com/bigcode-project/bigcode-dataset) to filter data.
+- Step 1: Collecting code data from GitHub and apply the same filtering rules as [StarCoder Data](https://github.com/bigcode-project/bigcode-dataset) to filter data.
 - Step 2: Parsing the dependencies of files within the same repository to rearrange the file positions based on their dependencies.
 - Step 3: Concatenating dependent files to form a single example and employ repo-level minhash for deduplication.
 - Step 4: Further filtering out low-quality code, such as codes with syntax errors or poor readability.
@@ -157,7 +157,7 @@ This code works by selecting a 'pivot' element from the array and partitioning t
 
 If you don't want to use the provided api `apply_chat_template` which loads the template from `tokenizer_config.json`, you can use the following template to chat with our model. Replace the `['content']` with your instructions and the model's previous (if any) responses, then the model will generate the response to the currently given instruction.
 ```
-You are an AI programming assistant, utilizing the Deepseek Coder model, developed by Deepseek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
+You are an AI programming assistant, utilizing the DeepSeek Coder model, developed by DeepSeek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
 ### Instruction:
 ['content']
 ### Response:
@@ -255,7 +255,7 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ---
-In the following scenario, the Deepseek-Coder 6.7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to correctly complete the **main** function in`main.py` file for model training and evaluation.
+In the following scenario, the DeepSeek-Coder 6.7B model effectively calls a class **IrisClassifier** and its member function from the `model.py` file, and also utilizes functions from the `utils.py` file, to correctly complete the **main** function in`main.py` file for model training and evaluation.
 
 ![Completion GIF](pictures/completion_demo.gif)
 
