@@ -1,7 +1,7 @@
 <p align="center">
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.png">
 </p>
-<p align="center"><a href="https://www.deepseek.com/" style="text-decoration:none">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/" style="text-decoration:none">[🤖 Chat with DeepSeek Coder]</a> | <a href="https://huggingface.co/deepseek-ai" style="text-decoration:none">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5" style="text-decoration:none">[Discord]</a>  |  <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true" style="text-decoration:none">[WeChat (微信)]</a></p>
+<p align="center"><a href="https://www.deepseek.com/" style="text-decoration:underline">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/" style="text-decoration:none">[🤖 Chat with DeepSeek Coder]</a> | <a href="https://huggingface.co/deepseek-ai" style="text-decoration:none">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5" style="text-decoration:none">[Discord]</a>  |  <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true" style="text-decoration:none">[WeChat (微信)]</a></p>
 <hr>
 
 
