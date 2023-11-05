@@ -69,7 +69,7 @@ A demo is also available on the [🤗 Hugging Face Space](https://huggingface.co
 
 Here are some examples of how to use our model.
 
-#### 1）Code Completion
+#### 1) Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
@@ -96,7 +96,7 @@ def quick_sort(arr):
     return quick_sort(left) + [pivot] + quick_sort(right)
 ```
 
-#### 2）Code Insertion
+#### 2) Code Insertion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
@@ -123,7 +123,7 @@ This code will output the following result:
    for i in range(1, len(arr)):
 ```
 
-#### 3）Chat Model Inference
+#### 3) Chat Model Inference
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True)
@@ -171,7 +171,7 @@ You are an AI programming assistant, utilizing the Deepseek Coder model, develop
 
 ```
 
-#### 4）Repository Level Code Completion
+#### 4) Repository Level Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
@@ -264,16 +264,16 @@ In the following scenario, the Deepseek-Coder 6.7B model effectively calls a cla
 ### 5. Detailed Evaluation Results
 
 The reproducible code for the following evaluation results can be found in the [Evaluation](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation) directory.
-#### 1）Multilingual HumanEval Benchmark
+#### 1) Multilingual HumanEval Benchmark
 ![HumanEval](pictures/HumanEval.png)
 
-#### 2）MBPP Benchmark
+#### 2) MBPP Benchmark
 <img src="pictures/MBPP.png" alt="MBPP" width="40%">
 
-#### 3）DS-1000 Benchmark
+#### 3) DS-1000 Benchmark
 ![DS-1000](pictures/DS-1000.png)
 
-#### 4）Program-Aid Math Reasoning Benchmark
+#### 4) Program-Aid Math Reasoning Benchmark
 ![Math](pictures/Math.png)
 
 
