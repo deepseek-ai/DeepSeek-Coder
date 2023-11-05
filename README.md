@@ -1,7 +1,7 @@
 <p align="center">
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.png">
 </p>
-<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder] | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5">[Discord]</a>  |  <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true">[Wechat(微信)]</a></p>
+<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder]</a> | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5">[Discord]</a>  |  <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true">[WeChat (微信)]</a></p>
 <hr>
 
 
@@ -36,7 +36,6 @@ Surprisingly, our DeepSeek-Coder-Base-7B reaches the performance of CodeLlama-34
 And the DeepSeek-Coder-Instruct-33B model after instruction tuning outperforms GPT35-turbo on HumanEval and achieves comparable result with GPT35-turbo on MBPP.
 
 More evaluation details can be found in the [Detailed Evaluation](#5-detailed-evaluation-results).
-
 
 
 ### 3. Procedure of Data Creation and Model Training
