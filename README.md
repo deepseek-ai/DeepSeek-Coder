@@ -58,8 +58,6 @@ More evaluation details can be found in the [Detailed Evaluation](#5-detailed-ev
 <img src="pictures/model_pretraining.png" alt="model_pretraining" width="100%">
 
 
-
-
 ### 4. How to Use
 Before proceeding, you'll need to install the necessary dependencies. You can do this by running the following command:
 ```
