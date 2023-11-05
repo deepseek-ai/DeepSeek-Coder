@@ -203,6 +203,8 @@ def load_data():
 
 def evaluate_predictions(y_test, y_pred):
     return accuracy_score(y_test, y_pred)
+
+
 # model.py
 import torch
 import torch.nn as nn
@@ -242,6 +244,8 @@ class IrisClassifier(nn.Module):
             outputs = self(X_test)
             _, predicted = outputs.max(1)
         return predicted.numpy()
+
+
 # main.py
 from utils import load_data, evaluate_predictions
 from model import IrisClassifier as Classifier
