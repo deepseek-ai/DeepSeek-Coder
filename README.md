@@ -279,7 +279,7 @@ The reproducible code for the following evaluation results can be found in the [
 ![Math](pictures/Math.png)
 
 ### 6. Resources
-(awesome-deepseek-coder)[https://github.com/deepseek-ai/awesome-deepseek-coder] is a curated list of open-source projects related to DeepSeek Coder.
+[awesome-deepseek-coder](https://github.com/deepseek-ai/awesome-deepseek-coder) is a curated list of open-source projects related to DeepSeek Coder.
 
 ### 7. License
 This code repository is licensed under the MIT License. The use of DeepSeek Coder models is subject to the Model License. DeepSeek Coder supports commercial use.
