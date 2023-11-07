@@ -278,12 +278,14 @@ The reproducible code for the following evaluation results can be found in the [
 #### 4) Program-Aid Math Reasoning Benchmark
 ![Math](pictures/Math.png)
 
+### 6. Resources
+(awesome-deepseek-coder)[https://github.com/deepseek-ai/awesome-deepseek-coder] is a curated list of open-source projects related to DeepSeek Coder.
 
-### 6. License
+### 7. License
 This code repository is licensed under the MIT License. The use of DeepSeek Coder models is subject to the Model License. DeepSeek Coder supports commercial use.
 
 See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more details.
 
-### 6. Contact
+### 8. Contact
 
 If you have any questions, please raise an issue or contact us at [agi_code@deepseek.com](mailto:agi_code@deepseek.com).
