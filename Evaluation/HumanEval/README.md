@@ -27,7 +27,18 @@ LANGUAGE="python"
 python -m accelerate.commands.launch --config_file test_config.yaml eval_pal.py --logdir ${MODEL_NAME_OR_PATH} --language ${LANGUAGE} --dataroot ${DATASET_ROOT} 
 ```
 
+To evaluate the instruction-based model, please follow the script below:
+```bash
+LANG="python"
+OUPUT_DIR="output"
+MODEL="deepseek-coder-33b-instruct"
 
+CUDA_VISIBLE_DEVICES=0,1 python eval_instruct.py \
+    --model "deepseek-ai/$MODEL" \
+    --output_path "$OUPUT_DIR/${LANG}.$MODEL.jsonl" \
+    --language $LANG \
+    --temp_dir $OUPUT_DIR
+```
 
 ## 4. Experimental Results
 
