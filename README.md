@@ -263,7 +263,52 @@ In the following scenario, the DeepSeek-Coder-6.7B model effectively calls a cla
 
 ![Completion GIF](pictures/completion_demo.gif)
 
-### 5. Detailed Evaluation Results
+### 5. How to Fine-tune DeepSeek-Coder
+
+We provide script `finetune_deepseekcoder.py` for users to finetune our models on downstream tasks.
+
+The script supports the training with [DeepSpeed](https://github.com/microsoft/DeepSpeed). You need install required packages by:
+
+```bash
+pip install -r requirements.txt
+```
+
+Please follow [Sample Dataset Format](https://huggingface.co/datasets/nickrosh/Evol-Instruct-Code-80k-v1) to prepare your training data.
+Each line is a json-serialized string with two required fields `instruction` and `output`.
+
+After data preparation, you can use the sample shell script to finetune `deepseek-ai/deepseek-coder-6.7b-instruct`. 
+Remember to specify `DATA_PATH`, `OUTPUT_PATH`.
+And please choose appropriate hyper-parameters(e.g., `learning_rate`, `per_device_train_batch_size`) according to your scenario.
+
+```bash
+DATA_PATH="<your_data_path>"
+OUTPUT_PATH="<your_output_path>"
+MODEL="deepseek-ai/deepseek-coder-6.7b-instruct"
+
+deepspeed finetune_deepseekcoder.py \
+    --model_name_or_path $MODEL_PATH \
+    --data_path $DATA_PATH \
+    --output_dir $OUTPUT_PATH \
+    --num_train_epochs 3 \
+    --model_max_length 1024 \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 4 \
+    --evaluation_strategy "no" \
+    --save_strategy "steps" \
+    --save_steps 100 \
+    --save_total_limit 100 \
+    --learning_rate 2e-5 \
+    --warmup_steps 10 \
+    --logging_steps 1 \
+    --lr_scheduler_type "cosine" \
+    --gradient_checkpointing True \
+    --report_to "tensorboard" \
+    --deepspeed configs/ds_config_zero3.json \
+    --bf16 True
+```
+
+### 6. Detailed Evaluation Results
 
 The reproducible code for the following evaluation results can be found in the [Evaluation](https://github.com/deepseek-ai/deepseek-coder/tree/main/Evaluation) directory.
 #### 1) Multilingual HumanEval Benchmark
@@ -278,14 +323,14 @@ The reproducible code for the following evaluation results can be found in the [
 #### 4) Program-Aid Math Reasoning Benchmark
 ![Math](pictures/Math.png)
 
-### 6. Resources
+### 7. Resources
 [awesome-deepseek-coder](https://github.com/deepseek-ai/awesome-deepseek-coder) is a curated list of open-source projects related to DeepSeek Coder.
 
-### 7. License
+### 8. License
 This code repository is licensed under the MIT License. The use of DeepSeek Coder models is subject to the Model License. DeepSeek Coder supports commercial use.
 
 See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more details.
 
-### 8. Contact
+### 9. Contact
 
 If you have any questions, please raise an issue or contact us at [agi_code@deepseek.com](mailto:agi_code@deepseek.com).
