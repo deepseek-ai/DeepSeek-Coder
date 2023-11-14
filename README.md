@@ -265,12 +265,12 @@ In the following scenario, the DeepSeek-Coder-6.7B model effectively calls a cla
 
 ### 5. How to Fine-tune DeepSeek-Coder
 
-We provide script `finetune_deepseekcoder.py` for users to finetune our models on downstream tasks.
+We provide script `finetune/finetune_deepseekcoder.py` for users to finetune our models on downstream tasks.
 
 The script supports the training with [DeepSpeed](https://github.com/microsoft/DeepSpeed). You need install required packages by:
 
 ```bash
-pip install -r requirements.txt
+pip install -r finetune/requirements.txt
 ```
 
 Please follow [Sample Dataset Format](https://huggingface.co/datasets/nickrosh/Evol-Instruct-Code-80k-v1) to prepare your training data.
@@ -285,7 +285,7 @@ DATA_PATH="<your_data_path>"
 OUTPUT_PATH="<your_output_path>"
 MODEL="deepseek-ai/deepseek-coder-6.7b-instruct"
 
-deepspeed finetune_deepseekcoder.py \
+cd finetune && deepspeed finetune_deepseekcoder.py \
     --model_name_or_path $MODEL_PATH \
     --data_path $DATA_PATH \
     --output_dir $OUTPUT_PATH \
