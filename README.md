@@ -21,6 +21,8 @@ DeepSeek Coder is composed of a series of code language models, each trained fro
 
 - **Advanced Code Completion Capabilities**: A window size of 16K and a fill-in-the-blank task, supporting project-level code completion and infilling tasks.
 
+#### Supported Programming Languages
+`['julia', 'matlab', 'tcsh', 'mathematica', 'cpp', 'fortran', 'yacc', 'powershell', 'go', 'clojure', 'sas', 'zig', 'verilog', 'isabelle', 'literate-agda', 'c-sharp', 'erlang', 'sparql', 'java-server-pages', 'java', 'stan', 'stata', 'visual-basic', 'augeas', 'applescript', 'emacs-lisp', 'json', 'rmarkdown', 'smalltalk', 'prolog', 'scala', 'ada', 'lean', 'pascal', 'literate-haskell', 'assembly', 'c', 'sql', 'php', 'javascript', 'bluespec', 'dockerfile', 'tex', 'protocol-buffer', 'awk', 'html', 'f-sharp', 'ruby', 'vhdl', 'elm', 'maple', 'idris', 'python', 'thrift', 'common-lisp', 'tcl', 'restructuredtext', 'batchfile', 'rust', 'r', 'typescript', 'markdown', 'antlr', 'agda', 'cmake', 'css', 'scheme', 'literate-coffeescript', 'groovy', 'coffeescript', 'cuda', 'glsl', 'standard-ml', 'yaml', 'lua', 'jupyter-notebook', 'ocaml', 'xslt', 'alloy', 'elixir', 'systemverilog', 'shell', 'perl', 'solidity', 'haskell', 'racket', 'kotlin', 'makefile', 'dart']`
 
 ### 2. Evaluation Results
 We evaluate DeepSeek Coder on various coding-related benchmarks.
