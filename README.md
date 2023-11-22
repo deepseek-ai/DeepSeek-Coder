@@ -333,6 +333,18 @@ This code repository is licensed under the MIT License. The use of DeepSeek Code
 
 See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more details.
 
-### 9. Contact
+### 9. Citation
+```
+@misc{deepseek-coder,
+  author = {DeepSeek AI},
+  title = {DeepSeek Coder: Let the Code Write Itself},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/deepseek-ai/DeepSeek-Coder}},
+}
+```
+
+### 10. Contact
 
 If you have any questions, please raise an issue or contact us at [agi_code@deepseek.com](mailto:agi_code@deepseek.com).
