@@ -18,7 +18,7 @@ And please choose appropriate hyper-parameters(e.g., `learning_rate`, `per_devic
 ```bash
 DATA_PATH="<your_data_path>"
 OUTPUT_PATH="<your_output_path>"
-MODEL="deepseek-ai/deepseek-coder-6.7b-instruct"
+MODEL_PATH="deepseek-ai/deepseek-coder-6.7b-instruct"
 
 deepspeed finetune_deepseekcoder.py \
     --model_name_or_path $MODEL_PATH \
