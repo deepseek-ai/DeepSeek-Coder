@@ -67,7 +67,7 @@ def generate_main(args):
 
     generated_examples = []
     for ex in tqdm(examples, desc='Generating'):
-        gen_example = generate_one(ex, lang, tokenizer, model)
+        gen_example = generate_one(ex, args.language, tokenizer, model)
         generated_examples.append(gen_example)
 
     print("Generate all over!!!")
