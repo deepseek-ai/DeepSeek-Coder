@@ -327,9 +327,13 @@ The reproducible code for the following evaluation results can be found in the [
 
 ### 7. Q&A
 
-#### Could You Provide the tokenizer.model File for GGUF Model Quantization?
+#### Could You Provide the tokenizer.model File for Model Quantization?
 
-DeepSeek Coder utilizes the [HuggingFace Tokenizer](https://huggingface.co/docs/tokenizers/index) to implement the Bytelevel-BPE algorithm, with specially designed pre-tokenizers to ensure optimal performance. Currently, there is no direct way to convert the tokenizer into a SentencePiece tokenizer. We have submitted a [PR](https://github.com/ggerganov/llama.cpp/pull/4070) to the popular quantization repository [llama.cpp](https://github.com/ggerganov/llama.cpp) to fully support all HuggingFace pre-tokenizers, including ours.
+DeepSeek Coder utilizes the [HuggingFace Tokenizer](https://huggingface.co/docs/tokenizers/index) to implement the Bytelevel-BPE algorithm, with specially designed pre-tokenizers to ensure optimal performance. Currently, there is no direct way to convert the tokenizer into a SentencePiece tokenizer. We are contributing to the open-source quantization methods facilitate the usage of HuggingFace Tokenizer.
+
+##### GGUF(llama.cpp)
+
+We have submitted a [PR](https://github.com/ggerganov/llama.cpp/pull/4070) to the popular quantization repository [llama.cpp](https://github.com/ggerganov/llama.cpp) to fully support all HuggingFace pre-tokenizers, including ours.
 
 While waiting for the PR to be merged, you can generate your GGUF model using the following steps:
 
@@ -346,7 +350,9 @@ python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name dee
 ./quantize <GGUF_PATH> <OUTPUT_PATH> q4_0
 ./main -m <OUTPUT_PATH> -n 128 -p <PROMPT>
 ```
+##### GPTQ(exllamav2)
 
+The [PR](https://github.com/turboderp/exllamav2/pull/189) to [exllamav2](https://github.com/turboderp/exllamav2) is also under reviewing. Please using the forked version before the PR getting merged.
 
 ### 8. Resources
 [awesome-deepseek-coder](https://github.com/deepseek-ai/awesome-deepseek-coder) is a curated list of open-source projects related to DeepSeek Coder.
