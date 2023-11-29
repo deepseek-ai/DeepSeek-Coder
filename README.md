@@ -376,4 +376,4 @@ See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more
 
 ### 11. Contact
 
-If you have any questions, please raise an issue or contact us at [agi_code@deepseek.com](mailto:agi_code@deepseek.com).
+If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).
