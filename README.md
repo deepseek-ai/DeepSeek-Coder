@@ -352,7 +352,10 @@ python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name dee
 ```
 ##### GPTQ(exllamav2)
 
-The [PR](https://github.com/turboderp/exllamav2/pull/189) to [exllamav2](https://github.com/turboderp/exllamav2) is also under reviewing. Please using the forked version before the PR getting merged.
+`UPDATE:`[exllamav2](https://github.com/turboderp/exllamav2) has been able to support Huggingface Tokenizer. Please pull the latest version and try out.
+
+Remeber to set RoPE scaling to 4 for correct output, more discussion could be found in this [PR](https://github.com/turboderp/exllamav2/pull/189).
+
 
 ### 8. Resources
 [awesome-deepseek-coder](https://github.com/deepseek-ai/awesome-deepseek-coder) is a curated list of open-source projects related to DeepSeek Coder.
