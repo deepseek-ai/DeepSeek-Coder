@@ -368,7 +368,7 @@ See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more
 ### 10. Citation
 ```
 @misc{deepseek-coder,
-  author = {DeepSeek-AI},
+  author = {DeepSeek},
   title = {DeepSeek Coder: Let the Code Write Itself},
   year = {2023},
   publisher = {GitHub},
