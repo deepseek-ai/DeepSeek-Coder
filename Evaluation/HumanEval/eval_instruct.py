@@ -39,7 +39,7 @@ def generate_one(example, lang, tokenizer, model):
         eos_token_id=stop_id
     )
 
-    output = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
+    output = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True, add_generation_prompt=True)
     example['output'] = output
     
     return extract_generation_code(example, lang_code=lang)

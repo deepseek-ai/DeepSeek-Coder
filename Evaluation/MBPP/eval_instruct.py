@@ -66,7 +66,7 @@ def generate_one(example, tokenizer, model):
     prompt = example['prompt']
     inputs = tokenizer.apply_chat_template(
         [{'role': 'user', 'content': prompt }],
-        return_tensors="pt"
+        return_tensors="pt", add_generation_prompt=True
     ).to(model.device)
 
     stop_id = tokenizer.convert_tokens_to_ids("<|EOT|>")
