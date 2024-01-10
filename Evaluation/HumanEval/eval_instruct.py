@@ -23,7 +23,8 @@ def generate_one(example, lang, tokenizer, model):
     prompt = build_deepseekcoder_instruction(languge_settings[lang]['full_name'], example['prompt'])
     inputs = tokenizer.apply_chat_template(
         [{'role': 'user', 'content': prompt }],
-        return_tensors="pt"
+        return_tensors="pt",
+        add_generation_prompt=True
     ).to(model.device)
 
     stop_id = tokenizer.convert_tokens_to_ids("<|EOT|>")
@@ -39,7 +40,7 @@ def generate_one(example, lang, tokenizer, model):
         eos_token_id=stop_id
     )
 
-    output = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True, add_generation_prompt=True)
+    output = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
     example['output'] = output
     
     return extract_generation_code(example, lang_code=lang)
