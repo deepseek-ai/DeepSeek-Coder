@@ -333,19 +333,21 @@ DeepSeek Coder utilizes the [HuggingFace Tokenizer](https://huggingface.co/docs/
 
 ##### GGUF(llama.cpp)
 
-We have submitted a [PR](https://github.com/ggerganov/llama.cpp/pull/4070) to the popular quantization repository [llama.cpp](https://github.com/ggerganov/llama.cpp) to fully support all HuggingFace pre-tokenizers, including ours.
+Update llama.cpp to latest commit (at least contains https://github.com/ggerganov/llama.cpp/pull/3633)
 
-While waiting for the PR to be merged, you can generate your GGUF model using the following steps:
+Generate GGUF model using the following steps:
 
 ```bash
-git clone https://github.com/DOGEwbx/llama.cpp.git
+git clone https://github.com/ggerganov/llama.cpp.git
 cd llama.cpp
-git checkout regex_gpt2_preprocess
 # set up the environment according to README
 make
+# or use `cmake` instead of `make` on Windows
+
 python3 -m pip install -r requirements.txt
 # generate GGUF model
-python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name deepseekcoder
+python convert.py <YOUR_MODLE_PATH> --vocab-type bpe --pad-vocab
+
 # use q4_0 quantization as an example
 ./quantize <GGUF_PATH> <OUTPUT_PATH> q4_0
 ./main -m <OUTPUT_PATH> -n 128 -p <PROMPT>
