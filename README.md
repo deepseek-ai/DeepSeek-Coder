@@ -2,6 +2,9 @@
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.png">
 </p>
 <p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder]</a> | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5">[Discord]</a> | <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true">[WeChat (微信)]</a></p>
+<p align="center">
+  <a href="https://arxiv.org/pdf/2401.14196.pdf"><b>Paper Link</b>👁️</a>
+</p>
 <hr>
 
 
@@ -368,12 +371,12 @@ See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more
 ### 10. Citation
 ```
 @misc{deepseek-coder,
-  author = {DeepSeek},
-  title = {DeepSeek Coder: Let the Code Write Itself},
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/deepseek-ai/DeepSeek-Coder}},
+  author = {Daya Guo, Qihao Zhu, Dejian Yang, Zhenda Xie, Kai Dong, Wentao Zhang, Guanting Chen, Xiao Bi, Y. Wu, Y.K. Li, Fuli Luo, Yingfei Xiong, Wenfeng Liang},
+  title = {DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence},
+  journal = {CoRR},
+  volume = {abs/2401.14196},
+  year = {2024},
+  url = {https://arxiv.org/abs/2401.14196},
 }
 ```
 
