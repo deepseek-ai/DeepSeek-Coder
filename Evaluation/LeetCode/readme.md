@@ -10,7 +10,7 @@ Please follow the following two steps to evaluate the model's performance on our
 cd Evaluation/LeetCode
 
 # Set the model or path here
-MODEL="deepseek-coder-7b-instruct"
+MODEL="deepseek-ai/deepseek-coder-7b-instruct"
 
 python vllm_inference.py --model_name_or_path $MODEL --saved_path output/20240121-Jul.deepseek-coder-7b-instruct.jsonl
 ```
