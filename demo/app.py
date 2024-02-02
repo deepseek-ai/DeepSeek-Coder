@@ -62,7 +62,7 @@ def generate(
         do_sample=False,
         num_beams=1,
         repetition_penalty=repetition_penalty,
-        eos_token_id=32021
+        eos_token_id=tokenizer.eos_token_id
     )
     t = Thread(target=model.generate, kwargs=generate_kwargs)
     t.start()
