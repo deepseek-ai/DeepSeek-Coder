@@ -328,6 +328,57 @@ The reproducible code for the following evaluation results can be found in the [
 #### 4) Program-Aid Math Reasoning Benchmark
 ![Math](pictures/Math.png)
 
+### Inference with vLLM
+
+You can also employ [vLLM](https://github.com/vllm-project/vllm) for high-throughput inference.
+
+**Text Completion**
+
+```python
+from vllm import LLM, SamplingParams
+
+tp_size = 4 # Tensor Parallelism
+sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=100)
+model_name = "deepseek-ai/deepseek-coder-6.7b-base"
+llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
+
+prompts = [
+    "If everyone in a country loves one another,",
+    "The research should also focus on the technologies",
+    "To determine if the label is correct, we need to"
+]
+outputs = llm.generate(prompts, sampling_params)
+
+generated_text = [output.outputs[0].text for output in outputs]
+print(generated_text)
+```
+
+**Chat Completion**
+
+```python
+from transformers import AutoTokenizer
+from vllm import LLM, SamplingParams
+
+tp_size = 4 # Tensor Parallelism
+sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=100)
+model_name = "deepseek-ai/deepseek-coder-6.7b-instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
+
+messages_list = [
+    [{"role": "user", "content": "Who are you?"}],
+    [{"role": "user", "content": "What can you do?"}],
+    [{"role": "user", "content": "Explain Transformer briefly."}],
+]
+prompts = [tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False) for messages in messages_list]
+
+sampling_params.stop = [tokenizer.eos_token]
+outputs = llm.generate(prompts, sampling_params)
+
+generated_text = [output.outputs[0].text for output in outputs]
+print(generated_text)
+```
+
 ### 7. Q&A
 
 #### Could You Provide the tokenizer.model File for Model Quantization?
@@ -358,6 +409,10 @@ python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name dee
 `UPDATE:`[exllamav2](https://github.com/turboderp/exllamav2) has been able to support Huggingface Tokenizer. Please pull the latest version and try out.
 
 Remember to set RoPE scaling to 4 for correct output, more discussion could be found in this [PR](https://github.com/turboderp/exllamav2/pull/189).
+
+#### How to use the deepseek-coder-instruct to complete the code?
+
+Although the deepseek-coder-instruct models are not specifically trained for code completion tasks during supervised fine-tuning (SFT), they retain the capability to perform code completion effectively. To enable this functionality, you simply need to adjust the eos_token_id parameter. Set the eos_token_id to 32014, as opposed to its default value of 32021 in the deepseek-coder-instruct configuration. This modification prompts the model to recognize the end of a sequence differently, thereby facilitating code completion tasks.
 
 
 ### 8. Resources
