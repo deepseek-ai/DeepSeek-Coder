@@ -40,7 +40,7 @@ The result shows that DeepSeek-Coder-Base-33B significantly outperforms existing
 Surprisingly, our DeepSeek-Coder-Base-7B reaches the performance of CodeLlama-34B.
 The DeepSeek-Coder-Instruct-33B model after instruction tuning outperforms GPT35-turbo on HumanEval and achieves comparable results with GPT35-turbo on MBPP.
 
-More evaluation details can be found in the [Detailed Evaluation](#5-detailed-evaluation-results).
+More evaluation details can be found in the [Detailed Evaluation](#6-detailed-evaluation-results).
 
 
 ### 3. Procedure of Data Creation and Model Training
