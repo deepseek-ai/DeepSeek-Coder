@@ -129,6 +129,7 @@ This code will output the following result:
 #### 3) Chat Model Inference
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
 messages=[
@@ -177,6 +178,7 @@ You are an AI programming assistant, utilizing the DeepSeek Coder model, develop
 #### 4) Repository Level Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
 
