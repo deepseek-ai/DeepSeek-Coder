@@ -17,8 +17,7 @@
         "params": {
             "total_num_steps": "auto",
             "warmup_num_steps": "auto",
-            "warmup_type": "linear",
-            "warmup_min_ratio": 0.1
+            "warmup_type": "linear"
         }
     },
 
