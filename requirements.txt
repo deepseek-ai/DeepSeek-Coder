@@ -1,6 +1,6 @@
 torch>=2.0
 tokenizers>=0.14.0
-transformers>=4.35.0
+transformers==4.35.0
 accelerate
 sympy==1.12
 pebble 
