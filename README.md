@@ -293,7 +293,7 @@ OUTPUT_PATH="<your_output_path>"
 MODEL="deepseek-ai/deepseek-coder-6.7b-instruct"
 
 cd finetune && deepspeed finetune_deepseekcoder.py \
-    --model_name_or_path $MODEL_PATH \
+    --model_name_or_path $MODEL \
     --data_path $DATA_PATH \
     --output_dir $OUTPUT_PATH \
     --num_train_epochs 3 \
