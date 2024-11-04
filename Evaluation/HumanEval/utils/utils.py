@@ -70,9 +70,10 @@ def extract_generation_code(example: str, lang_code: str, verbose: bool=False):
             code_block = code_block[:main_start]
         
         func_name, func_prefix = get_function_name(question, lang)
-
+        found_signature = False
         try:
             start = code_block.lower().index(func_name.lower())
+            found_signature = True
             indent = 0
             while start - indent >= 0 and code_block[start - indent-1] == ' ':
                 indent += 1
@@ -93,7 +94,10 @@ def extract_generation_code(example: str, lang_code: str, verbose: bool=False):
         if lang_code.lower() in ['php', 'ts', 'js']:
             body += '\n' + ' '*indent + '}'
     
-        generation = func_prefix + '\n' + body + '\n'
+        if not found_signature:
+            generation = question + '\n' + body + '\n'
+        else:
+            generation = func_prefix + '\n' + body + '\n'
         example['generation'] = generation
 
     except Exception as ex:
