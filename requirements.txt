@@ -1,7 +1,7 @@
 torch>=2.0
 tokenizers>=0.14.0
 transformers==4.35.0
-accelerate
+accelerate==0.31.0
 sympy==1.12
 pebble 
 timeout-decorator 
