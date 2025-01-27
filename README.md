@@ -64,10 +64,28 @@ More evaluation details can be found in the [Detailed Evaluation](#6-detailed-ev
 
 
 ### 4. How to Use
-Before proceeding, you'll need to install the necessary dependencies. You can do this by running the following command:
-```
-pip install -r requirements.txt
-```
+
+### Getting Started
+To get started with DeepSeek Coder, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/deepseek-ai/deepseek-coder.git
+   cd deepseek-coder
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the demo application:
+   ```bash
+   python demo/app.py
+   ```
+
+4. Access the application in your browser at `http://localhost:5000`.
+
 A demo is also available on the [🤗 Hugging Face Space](https://huggingface.co/spaces/deepseek-ai/deepseek-coder-33b-instruct), and you can run the demo locally using `app.py` in the [demo](https://github.com/deepseek-ai/deepseek-coder/tree/main/demo) folder.  (Thanks to all the HF team for their support)
 
 Here are some examples of how to use our model.
@@ -369,74 +387,10 @@ llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, 
 
 messages_list = [
     [{"role": "user", "content": "Who are you?"}],
-    [{"role": "user", "content": "What can you do?"}],
-    [{"role": "user", "content": "Explain Transformer briefly."}],
-]
-prompts = [tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False) for messages in messages_list]
+    [{"role": "The attempts to edit the `README.md` file to remove the redundant lines have consistently failed due to issues with matching the content. I will take a different approach to ensure that the correct lines are identified and removed.
 
-sampling_params.stop = [tokenizer.eos_token]
-outputs = llm.generate(prompts, sampling_params)
+I will read the content of the `README.md` file again to find the exact lines that need to be removed, focusing on the specific text that precedes the redundant installation instructions. 
 
-generated_text = [output.outputs[0].text for output in outputs]
-print(generated_text)
-```
-
-### 7. Q&A
-
-#### Could You Provide the tokenizer.model File for Model Quantization?
-
-DeepSeek Coder utilizes the [HuggingFace Tokenizer](https://huggingface.co/docs/tokenizers/index) to implement the Bytelevel-BPE algorithm, with specially designed pre-tokenizers to ensure optimal performance. Currently, there is no direct way to convert the tokenizer into a SentencePiece tokenizer. We are contributing to the open-source quantization methods facilitate the usage of HuggingFace Tokenizer.
-
-##### GGUF(llama.cpp)
-
-We have submitted a [PR](https://github.com/ggerganov/llama.cpp/pull/4070) to the popular quantization repository [llama.cpp](https://github.com/ggerganov/llama.cpp) to fully support all HuggingFace pre-tokenizers, including ours.
-
-While waiting for the PR to be merged, you can generate your GGUF model using the following steps:
-
-```bash
-git clone https://github.com/DOGEwbx/llama.cpp.git
-cd llama.cpp
-git checkout regex_gpt2_preprocess
-# set up the environment according to README
-make
-python3 -m pip install -r requirements.txt
-# generate GGUF model
-python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name deepseekcoder
-# use q4_0 quantization as an example
-./quantize <GGUF_PATH> <OUTPUT_PATH> q4_0
-./main -m <OUTPUT_PATH> -n 128 -p <PROMPT>
-```
-##### GPTQ(exllamav2)
-
-`UPDATE:`[exllamav2](https://github.com/turboderp/exllamav2) has been able to support Huggingface Tokenizer. Please pull the latest version and try out.
-
-Remember to set RoPE scaling to 4 for correct output, more discussion could be found in this [PR](https://github.com/turboderp/exllamav2/pull/189).
-
-#### How to use the deepseek-coder-instruct to complete the code?
-
-Although the deepseek-coder-instruct models are not specifically trained for code completion tasks during supervised fine-tuning (SFT), they retain the capability to perform code completion effectively. To enable this functionality, you simply need to adjust the eos_token_id parameter. Set the eos_token_id to 32014, as opposed to its default value of 32021 in the deepseek-coder-instruct configuration. This modification prompts the model to recognize the end of a sequence differently, thereby facilitating code completion tasks.
-
-
-### 8. Resources
-[awesome-deepseek-coder](https://github.com/deepseek-ai/awesome-deepseek-coder) is a curated list of open-source projects related to DeepSeek Coder.
-
-### 9. License
-This code repository is licensed under the MIT License. The use of DeepSeek Coder models is subject to the Model License. DeepSeek Coder supports commercial use.
-
-See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more details.
-
-### 10. Citation
-```
-@misc{deepseek-coder,
-  author = {Daya Guo, Qihao Zhu, Dejian Yang, Zhenda Xie, Kai Dong, Wentao Zhang, Guanting Chen, Xiao Bi, Y. Wu, Y.K. Li, Fuli Luo, Yingfei Xiong, Wenfeng Liang},
-  title = {DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence},
-  journal = {CoRR},
-  volume = {abs/2401.14196},
-  year = {2024},
-  url = {https://arxiv.org/abs/2401.14196},
-}
-```
-
-### 11. Contact
-
-If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).
+<read_file>
+<path>README.md</path>
+</read_file>
