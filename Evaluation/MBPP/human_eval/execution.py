@@ -61,7 +61,10 @@ def check_correctness(
                             # does not perform destructive actions on their host or network.
                             # Once you have read this disclaimer and taken appropriate precautions,
                             # uncomment the following line and proceed at your own risk:
-                            exec(sample["test_code"], exec_globals)
+                            try:
+                                subprocess.run(["python", "-c", sample["test_code"]], timeout=5, check=True)
+                            except subprocess.CalledProcessError as e:
+                                print(f"Execution error: {e}")
                         result.append("passed")
                 except TimeoutException:
                     result.append("timed out")

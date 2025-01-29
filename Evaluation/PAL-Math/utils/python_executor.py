@@ -34,7 +34,8 @@ class GenericRuntime:
     def exec_code(self, code_piece: str) -> None:
         if regex.search(r'(\s|^)?input\(', code_piece) or regex.search(r'(\s|^)?os.system\(', code_piece):
             raise RuntimeError()
-        exec(code_piece, self._global_vars)
+        safe_globals = {"__builtins__": {}}  # Remove access to dangerous built-ins
+        exec(code_piece, safe_globals, self._global_vars)
         
     def eval_code(self, expr: str) -> Any:
         return eval(expr, self._global_vars)
