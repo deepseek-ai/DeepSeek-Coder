@@ -5,6 +5,7 @@ import torch
 import re
 from pathlib import Path
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor
 
 data_abs_dir = Path(__file__).parent / "data"
 
@@ -86,6 +87,11 @@ def generate_one(example, tokenizer, model):
     example['gpt_completion'] = output
     return convert_for_evaluation(example)
 
+def generate_and_log_code(ex):
+    gen_code = generate_one(ex, tokenizer, model)
+    print("Generated {}/{}...".format(examples.index(ex) + 1, len(examples)))  # Safe logging
+    return gen_code
+
 def generate_main(args):
     model_name_or_path = args.model
     saved_path = args.output_path
@@ -106,11 +112,8 @@ def generate_main(args):
     examples = list(read_test_examples(problem_file))
     print("Read {} examples for evaluation over.".format(len(examples)))
 
-    generated_examples = []
-    for ex in tqdm(examples, desc='Generating'):
-        gen_example = generate_one(ex, tokenizer, model)
-        generated_examples.append(gen_example)
-        print("Generate {}/{} over...".format(len(generated_examples), len(examples)))
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        generated_codes = list(executor.map(generate_and_log_code, examples))
 
     print("Generate all over!!!")
     with open(saved_path, 'w', encoding='utf-8') as fw:
