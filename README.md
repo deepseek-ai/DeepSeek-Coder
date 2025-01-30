@@ -437,6 +437,17 @@ See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more
 }
 ```
 
-### 11. Contact
+### 11. DeepSeek
+
+Thank you for being a part of DeepSeek! We’re thrilled to see this project grow, and it's all thanks to you! 🎉
+
+## 🌟 GitHub Stars Over Time
+To showcase how the project has grown, here's a graph showing the number of stars DeepSeek has received over time:
+
+![GitHub Stars Over Time](https://star-history.t9t.io/github/deepseek-ai/deepseek.svg)
+
+Keep the stars coming! Thanks for supporting Open Source! 💖
+
+### 12. Contact
 
 If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).
