@@ -436,7 +436,17 @@ See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more
   url = {https://arxiv.org/abs/2401.14196},
 }
 ```
+### 11. DeepSeek
 
-### 11. Contact
+Thank you for being a part of DeepSeek! We’re thrilled to see this project grow, and it's all thanks to you! 🎉
+
+## 🌟 GitHub Stars Over Time
+To showcase how the project has grown, here's a graph showing the number of stars DeepSeek has received over time:
+
+![GitHub Stars Over Time](https://api.star-history.com/svg?repos=deepseek-ai/deepseek&type=Date)
+
+Keep the stars coming! Thanks for supporting Open Source! 💖
+
+### 12. Contact
 
 If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).
