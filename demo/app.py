@@ -21,13 +21,11 @@ This Space demonstrates model [DeepSeek-Coder](https://huggingface.co/deepseek-a
 if not torch.cuda.is_available():
     DESCRIPTION += "\n<p>Running on CPU 🥶 This demo does not work on CPU.</p>"
 
-
 if torch.cuda.is_available():
     model_id = "deepseek-ai/deepseek-coder-6.7b-instruct"
     model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.bfloat16, device_map="auto")
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     tokenizer.use_default_system_prompt = False
-    
 
 
 @spaces.GPU
@@ -56,11 +54,12 @@ def generate(
 
     streamer = TextIteratorStreamer(tokenizer, timeout=10.0, skip_prompt=True, skip_special_tokens=True)
     generate_kwargs = dict(
-        {"input_ids": input_ids},
+        input_ids=input_ids,
         streamer=streamer,
         max_new_tokens=max_new_tokens,
-        do_sample=False,
-        num_beams=1,
+        temperature=temperature,
+        top_p=top_p,
+        top_k=top_k,
         repetition_penalty=repetition_penalty,
         eos_token_id=tokenizer.eos_token_id
     )
@@ -70,7 +69,7 @@ def generate(
     outputs = []
     for text in streamer:
         outputs.append(text)
-        yield "".join(outputs).replace("<|EOT|>","")
+        yield "".join(outputs).replace("<|EOT|>", "")
 
 
 chat_interface = gr.ChatInterface(
@@ -84,13 +83,13 @@ chat_interface = gr.ChatInterface(
             step=1,
             value=DEFAULT_MAX_NEW_TOKENS,
         ),
-        # gr.Slider(
-        #     label="Temperature",
-        #     minimum=0,
-        #     maximum=4.0,
-        #     step=0.1,
-        #     value=0,
-        # ),
+        gr.Slider(
+            label="Temperature",
+            minimum=0,
+            maximum=4.0,
+            step=0.1,
+            value=0.6,
+        ),
         gr.Slider(
             label="Top-p (nucleus sampling)",
             minimum=0.05,
