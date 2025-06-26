@@ -167,9 +167,9 @@ def process_humaneval_test(sample, problems, example_test=False, is_mbpp=False, 
         else:
             test_string = test_setup + "\n" + prompt + code + "\n" + test
     elif language == "rust":
-        main = "\nfn main(){ \n } \n"
-        declaration = problems[task_id]["declaration"]
-        test_string = main + declaration + prompt + code + test
+        # main = "\nfn main(){ \n } \n"
+        # declaration = problems[task_id]["declaration"]
+        test_string = code + test
     elif language == "php":
         if code[:5] != "<?php":
             code = "<?php\n" + code
