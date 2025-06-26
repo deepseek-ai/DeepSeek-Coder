@@ -174,6 +174,8 @@ def process_humaneval_test(sample, problems, example_test=False, is_mbpp=False, 
         if code[:5] != "<?php":
             code = "<?php\n" + code
         test_string = code + "\n" + test + "?>"
+    elif language == "scala":
+        test_string = code + "\n" + test
     return test_string
 
 
