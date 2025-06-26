@@ -39,6 +39,11 @@ languge_settings = {
     'scala': {
         'full_name': "Scala",
         'indent': 4,
+    },
+    'rust': {
+        'full_name': 'Rust',
+        'indent': 4,
+        'main': 'fn main()'
     }
 }
 
