@@ -1,4 +1,4 @@
-LANG="rust"
+LANG="python"
 OUTPUT_DIR="output"
 MODEL="/scratch/shared_dir/xinyu/deepseek-6.7b-instruct"
 MODEL_NAME=$(basename "$MODEL")

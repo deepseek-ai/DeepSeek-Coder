@@ -44,6 +44,14 @@ languge_settings = {
         'full_name': 'Rust',
         'indent': 4,
         'main': 'fn main()'
+    },
+    'ocaml': {
+        'full_name': 'OCaml',
+        'indent': 2,
+    },
+    'go': {
+        'full_name': "Go",
+        'indent': 0,
     }
 }
 
@@ -133,6 +141,9 @@ def cleanup_code(
         code = _truncate_code_at_stopwords(code, stop_words + ["\nexport", "\nimport", "\nexport default", "\nimport default", "\nconsole.log"])
     elif language_type.lower() == "scala":
         stop_words = stop_words + ["\nobject ", "\nclass ", "\n/**"]
+        code = _truncate_code_at_stopwords(code, stop_words)
+    elif language_type.lower() == "ocaml":
+        stop_words = stop_words + [";;"]
         code = _truncate_code_at_stopwords(code, stop_words)
     else:
         code = _truncate_code_at_stopwords(code, stop_words)

@@ -46,7 +46,7 @@ class HumanEval:
             assert False
 
     @torch.no_grad()
-    def eval_model(self, gpt, accelerator):
+    def eval_model(self, gpt, accelerator, model_path, language, start_time):
         """
         Evaluate the model on HumanEval.
         """
@@ -122,7 +122,7 @@ class HumanEval:
         tmpfile.close()        
         accelerator.wait_for_everyone()
         # calculate the final score of pass@k
-        self._calculate_final_score(accelerator)
+        self._calculate_final_score(accelerator, model_path, language, start_time)
         accelerator.wait_for_everyone()
         return
     
@@ -142,7 +142,7 @@ class HumanEval:
         if processed_num == all_num:
             print(f'EVAL DONE! Process time {(time.time() - start_time) / 60:.2f} m', flush=True)
     
-    def _calculate_final_score(self, accelerator):
+    def _calculate_final_score(self, accelerator, model_path, language, start_time):
         """
         Calculate the final score.
         """
@@ -157,7 +157,17 @@ class HumanEval:
             timeout = 10
             runlang = self.language
             res = evaluate_functional_correctness(input_file=logfilepath, problem_file=os.path.join(self.data_root, f"humaneval-{self.language}.jsonl"), tmp_dir=self.log_dir, timeout=timeout, language=runlang)
-            print("score is", res['pass@%d' % self.k])
-            os.remove(logfilepath)
+
+            end_time = datetime.datetime.now()
+
+            print("\n" + "="*45)
+            print("Evaluation Done!")
+            print(f"Model Path: {model_path}")
+            print(f"Language: {language}")
+            print("Score is", res['pass@%d' % self.k])
+            print(f"End Time: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            print("="*45)
+
+            # os.remove(logfilepath)
         return
             
