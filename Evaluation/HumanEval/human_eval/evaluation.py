@@ -178,6 +178,8 @@ def process_humaneval_test(sample, problems, example_test=False, is_mbpp=False, 
         test_string = code + "\n" + test
     elif language == "ocaml":
         test_string = code + "\n" + test
+    elif language == "julia":
+        test_string = code + "\n" + test
     return test_string
 
 

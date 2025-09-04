@@ -637,6 +637,46 @@ def check_correctness(
                 if os.path.exists(tmp_dir_ocaml):
                     shutil.rmtree(tmp_dir_ocaml)
         
+        elif "julia" in language_type.lower():
+            import os
+            import shutil
+            import tempfile
+            import subprocess
+            from .execution import time_limit, TimeoutException
+            
+            random_id = random.randint(1, 100000)
+            tmp_dir_julia = os.path.join(tempfile.gettempdir(), f"julia-eval-{random_id}")
+            os.makedirs(tmp_dir_julia, exist_ok=True)
+            file_path = os.path.join(tmp_dir_julia, "test.jl")
+
+            try:
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(sample["test_code"])
+
+                with time_limit(timeout):
+                    exec_result = subprocess.run(
+                        ["julia", file_path],
+                        timeout=timeout,
+                        capture_output=True,
+                        cwd=tmp_dir_julia
+                    )
+
+                if exec_result.returncode == 0:
+                    result.append("passed")
+                else:
+                    error_output = exec_result.stderr.decode("utf-8", "ignore")
+                    if not error_output:
+                        error_output = exec_result.stdout.decode("utf-8", "ignore")
+                    result.append(f"failed: {error_output.strip()}")
+
+            except TimeoutException:
+                result.append("timed out")
+            except Exception as e:
+                result.append(f"failed: an unexpected error occurred: {e}")
+            finally:
+                if os.path.exists(tmp_dir_julia):
+                    shutil.rmtree(tmp_dir_julia)
+        
     manager = multiprocessing.Manager()
     result = manager.list()
 

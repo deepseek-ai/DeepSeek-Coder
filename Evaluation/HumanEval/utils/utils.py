@@ -52,6 +52,10 @@ languge_settings = {
     'go': {
         'full_name': "Go",
         'indent': 0,
+    },
+    'julia': {
+        'full_name': 'Julia',
+        'indent': 4,
     }
 }
 
