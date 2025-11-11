@@ -65,7 +65,7 @@ More evaluation details can be found in the [Detailed Evaluation](#6-detailed-ev
 
 ### 4. How to Use
 Before proceeding, you'll need to install the necessary dependencies. You can do this by running the following command:
-```
+```bash
 pip install -r requirements.txt
 ```
 A demo is also available on the [🤗 Hugging Face Space](https://huggingface.co/spaces/deepseek-ai/deepseek-coder-33b-instruct), and you can run the demo locally using `app.py` in the [demo](https://github.com/deepseek-ai/deepseek-coder/tree/main/demo) folder.  (Thanks to all the HF team for their support)
@@ -426,7 +426,7 @@ This code repository is licensed under the MIT License. The use of DeepSeek Code
 See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more details.
 
 ### 10. Citation
-```
+```bibtex
 @misc{deepseek-coder,
   author = {Daya Guo, Qihao Zhu, Dejian Yang, Zhenda Xie, Kai Dong, Wentao Zhang, Guanting Chen, Xiao Bi, Y. Wu, Y.K. Li, Fuli Luo, Yingfei Xiong, Wenfeng Liang},
   title = {DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence},
