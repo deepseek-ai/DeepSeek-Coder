@@ -34,6 +34,14 @@ def check_correctness(
     """
 
     def unsafe_execute(tmp_dir):
+        import os
+        import shutil
+        import tempfile
+        import random
+        import subprocess
+        from contextlib import redirect_stderr, redirect_stdout, suppress
+        from .execution import time_limit, swallow_io, create_tempdir, reliability_guard, TimeoutException
+        
         random_id = random.randint(1, 100000)
         if "python" in language_type.lower():
             with create_tempdir():
@@ -545,6 +553,129 @@ def check_correctness(
             result.append(res)  
             os.chdir(origin_path)          
             shutil.rmtree(tmp_dir)
+        
+        elif "scala" in language_type.lower():
+            tmp_dir_scala = os.path.join(tempfile.gettempdir(), f"scala-eval-{random.randint(1, 100000)}")
+            os.makedirs(tmp_dir_scala, exist_ok=True)
+
+            file_path = os.path.join(tmp_dir_scala, "Problem.scala")
+
+            try:
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(sample["test_code"])
+
+                compile_result = subprocess.run(
+                    ["scalac", file_path],
+                    cwd=tmp_dir_scala,
+                    timeout=30.0,
+                    capture_output=True
+                )
+
+                if compile_result.returncode != 0:
+                    error_output = compile_result.stderr.decode("utf-8", "ignore")
+                    result.append(f"failed: compilation error: {error_output}")
+                else:
+                    run_result = subprocess.run(
+                        ["scala", "-cp", ".", "Problem"],
+                        cwd=tmp_dir_scala,
+                        timeout=timeout,
+                        capture_output=True
+                    )
+
+                    if run_result.returncode == 0:
+                        result.append("passed")
+                    else:
+                        error_output = run_result.stderr.decode("utf-8", "ignore")
+                        result.append(f"failed: {error_output}")
+
+            except subprocess.TimeoutExpired:
+                result.append("timed out")
+            except Exception as e:
+                result.append(f"failed: {e}")
+            finally:
+                if os.path.exists(tmp_dir_scala):
+                    shutil.rmtree(tmp_dir_scala)
+
+        elif "ocaml" in language_type.lower():
+            tmp_dir_ocaml = os.path.join(tempfile.gettempdir(), f"ocaml-eval-{random_id}")
+            os.makedirs(tmp_dir_ocaml, exist_ok=True)
+            file_path = os.path.join(tmp_dir_ocaml, "solution.ml")
+            output_path = os.path.join(tmp_dir_ocaml, "solution.out")
+
+            try:
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(sample["test_code"])
+
+                compile_result = subprocess.run(
+                    ["ocamlc", "-o", output_path, file_path], 
+                    cwd=tmp_dir_ocaml, 
+                    timeout=30.0, 
+                    capture_output=True
+                )
+
+                if compile_result.returncode != 0:
+                    error_output = compile_result.stderr.decode("utf-8", "ignore")
+                    result.append(f"failed: compilation error: {error_output}")
+                else:
+                    run_result = subprocess.run(
+                        ["ocamlrun", output_path], 
+                        cwd=tmp_dir_ocaml, 
+                        timeout=timeout, 
+                        capture_output=True
+                    )
+                    if run_result.returncode == 0:
+                        result.append("passed")
+                    else:
+                        error_output = run_result.stderr.decode("utf-8", "ignore")
+                        result.append(f"failed: {error_output}")
+
+            except subprocess.TimeoutExpired:
+                result.append("timed out")
+            except Exception as e:
+                result.append(f"failed: {e}")
+            finally:
+                if os.path.exists(tmp_dir_ocaml):
+                    shutil.rmtree(tmp_dir_ocaml)
+        
+        elif "julia" in language_type.lower():
+            import os
+            import shutil
+            import tempfile
+            import subprocess
+            from .execution import time_limit, TimeoutException
+            
+            random_id = random.randint(1, 100000)
+            tmp_dir_julia = os.path.join(tempfile.gettempdir(), f"julia-eval-{random_id}")
+            os.makedirs(tmp_dir_julia, exist_ok=True)
+            file_path = os.path.join(tmp_dir_julia, "test.jl")
+
+            try:
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(sample["test_code"])
+
+                with time_limit(timeout):
+                    exec_result = subprocess.run(
+                        ["julia", file_path],
+                        timeout=timeout,
+                        capture_output=True,
+                        cwd=tmp_dir_julia
+                    )
+
+                if exec_result.returncode == 0:
+                    result.append("passed")
+                else:
+                    error_output = exec_result.stderr.decode("utf-8", "ignore")
+                    if not error_output:
+                        error_output = exec_result.stdout.decode("utf-8", "ignore")
+                    result.append(f"failed: {error_output.strip()}")
+
+            except TimeoutException:
+                result.append("timed out")
+            except Exception as e:
+                result.append(f"failed: an unexpected error occurred: {e}")
+            finally:
+                if os.path.exists(tmp_dir_julia):
+                    shutil.rmtree(tmp_dir_julia)
         
     manager = multiprocessing.Manager()
     result = manager.list()
