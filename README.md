@@ -406,6 +406,9 @@ python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name dee
 ./quantize <GGUF_PATH> <OUTPUT_PATH> q4_0
 ./main -m <OUTPUT_PATH> -n 128 -p <PROMPT>
 ```
+
+You can also try out other [ggml](https://github.com/ggerganov/ggml)-based inferencers, such as [ChatLLM.cpp](https://github.com/foldl/chatllm.cpp), as well.
+
 ##### GPTQ(exllamav2)
 
 `UPDATE:`[exllamav2](https://github.com/turboderp/exllamav2) has been able to support Huggingface Tokenizer. Please pull the latest version and try out.
