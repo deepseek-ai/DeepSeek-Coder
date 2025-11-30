@@ -4,6 +4,7 @@ import os
 import torch
 from pathlib import Path
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor
 
 data_abs_dir = Path(__file__).parent / "data"
 
@@ -66,10 +67,8 @@ def generate_main(args):
     examples = [json.loads(x) for x in open(problem_file) if x.strip()]
     print("Read {} examples for evaluation over.".format(len(examples)))
 
-    generated_examples = []
-    for ex in tqdm(examples, desc='Generating'):
-        gen_example = generate_one(ex, args.language, tokenizer, model)
-        generated_examples.append(gen_example)
+    with ThreadPoolExecutor(max_workers=8) as executor:
+    generated_examples = list(executor.map(lambda ex: generate_one(ex, args.language, tokenizer, model), examples))
 
     print("Generate all over!!!")
     with open(saved_path, 'w', encoding='utf-8') as fw:
