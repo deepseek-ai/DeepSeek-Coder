@@ -282,6 +282,20 @@ pip install -r finetune/requirements.txt
 
 Please follow [Sample Dataset Format](https://huggingface.co/datasets/nickrosh/Evol-Instruct-Code-80k-v1) to prepare your training data.
 Each line is a json-serialized string with two required fields `instruction` and `output`.
+Example of a JSON-serialized string, one formatted for use in Python and another for use in SQL.
+
+###Python##
+{
+   "instruction": "Write a Python function to calculate factorial",
+   "output": "def factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)"
+}
+
+###SQL###
+{
+   "instruction": "Create a SQL query to find duplicate emails",
+   "output": "SELECT email FROM users GROUP BY email HAVING COUNT(*) > 1;"
+}
+
 
 After data preparation, you can use the sample shell script to finetune `deepseek-ai/deepseek-coder-6.7b-instruct`. 
 Remember to specify `DATA_PATH`, `OUTPUT_PATH`.
