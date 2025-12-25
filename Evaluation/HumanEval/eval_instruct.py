@@ -7,20 +7,20 @@ from tqdm import tqdm
 
 data_abs_dir = Path(__file__).parent / "data"
 
-from utils.utils import extract_generation_code, languge_settings
+from utils.utils import extract_generation_code, language_settings
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from human_eval.evaluation import evaluate_functional_correctness
 
-def build_deepseekcoder_instruction(languge: str, question: str):
+def build_deepseekcoder_instruction(language: str, question: str):
     return '''
 Please continue to complete the function. You are not allowed to modify the given code and do the completion only. Please return all completed function in a codeblock. Here is the given code to do completion:
 ```{}
 {}
 ```
-'''.strip().format(languge.lower(), question.strip())
+'''.strip().format(language.lower(), question.strip())
 
 def generate_one(example, lang, tokenizer, model):
-    prompt = build_deepseekcoder_instruction(languge_settings[lang]['full_name'], example['prompt'])
+    prompt = build_deepseekcoder_instruction(language_settings[lang]['full_name'], example['prompt'])
     inputs = tokenizer.apply_chat_template(
         [{'role': 'user', 'content': prompt }],
         return_tensors="pt",
@@ -91,7 +91,7 @@ def generate_main(args):
 def evaluation_only(args):
     lang = args.language
     temp_dir = args.temp_dir
-    assert os.path.exists(args.output_path), "Not fond output file: {}".format(args.output_path)
+    assert os.path.exists(args.output_path), "Not found output file: {}".format(args.output_path)
     os.makedirs(temp_dir, exist_ok=True)
 
     output_name = os.path.basename(args.output_path)
@@ -120,7 +120,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help="model name or path")
     parser.add_argument('--output_path', type=str, help="output path of your generation")
-    parser.add_argument('--language', type=str, help="langauge")
+    parser.add_argument('--language', type=str, help="language")
     parser.add_argument('--temp_dir', type=str, help="temp dir for evaluation", default="tmp")
     args = parser.parse_args()
 
