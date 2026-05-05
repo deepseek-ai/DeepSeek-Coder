@@ -1,7 +1,10 @@
 <p align="center">
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.png">
 </p>
-<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://coder.deepseek.com/">[🤖 Chat with DeepSeek Coder]</a> | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5">[Discord]</a> | <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true">[WeChat (微信)]</a></p>
+<p align="center"><a href="https://www.deepseek.com/">[<img src="pictures/home.png" width="20px"> Homepage]</a> | <a href="https://chat.deepseek.com/">[🤖 Chat with DeepSeek Coder]</a> | <a href="https://huggingface.co/deepseek-ai">[🤗 Models Download]</a> | <a href="https://discord.gg/Tc7c45Zzu5">[Discord]</a> | <a href="https://github.com/guoday/assert/blob/main/QR.png?raw=true">[WeChat (微信)]</a></p>
+<p align="center">
+  <a href="https://huggingface.co/papers/2401.14196"><b>Paper Link</b>👁️</a>
+</p>
 <hr>
 
 
@@ -22,7 +25,7 @@ DeepSeek Coder is composed of a series of code language models, each trained fro
 - **Advanced Code Completion Capabilities**: A window size of 16K and a fill-in-the-blank task, supporting project-level code completion and infilling tasks.
 
 #### Supported Programming Languages
-`['julia', 'matlab', 'tcsh', 'mathematica', 'cpp', 'fortran', 'yacc', 'powershell', 'go', 'clojure', 'sas', 'zig', 'verilog', 'isabelle', 'literate-agda', 'c-sharp', 'erlang', 'sparql', 'java-server-pages', 'java', 'stan', 'stata', 'visual-basic', 'augeas', 'applescript', 'emacs-lisp', 'json', 'rmarkdown', 'smalltalk', 'prolog', 'scala', 'ada', 'lean', 'pascal', 'literate-haskell', 'assembly', 'c', 'sql', 'php', 'javascript', 'bluespec', 'dockerfile', 'tex', 'protocol-buffer', 'awk', 'html', 'f-sharp', 'ruby', 'vhdl', 'elm', 'maple', 'idris', 'python', 'thrift', 'common-lisp', 'tcl', 'restructuredtext', 'batchfile', 'rust', 'r', 'typescript', 'markdown', 'antlr', 'agda', 'cmake', 'css', 'scheme', 'literate-coffeescript', 'groovy', 'coffeescript', 'cuda', 'glsl', 'standard-ml', 'yaml', 'lua', 'jupyter-notebook', 'ocaml', 'xslt', 'alloy', 'elixir', 'systemverilog', 'shell', 'perl', 'solidity', 'haskell', 'racket', 'kotlin', 'makefile', 'dart']`
+`['ada', 'agda', 'alloy', 'antlr', 'applescript', 'assembly', 'augeas', 'awk', 'batchfile', 'bluespec', 'c', 'c-sharp', 'clojure', 'cmake', 'coffeescript', 'common-lisp', 'cpp', 'css', 'cuda', 'dart', 'dockerfile', 'elixir', 'elm', 'emacs-lisp', 'erlang', 'f-sharp', 'fortran', 'glsl', 'go', 'groovy', 'haskell', 'html', 'idris', 'isabelle', 'java', 'java-server-pages', 'javascript', 'json', 'julia', 'jupyter-notebook', 'kotlin', 'lean', 'literate-agda', 'literate-coffeescript', 'literate-haskell', 'lua', 'makefile', 'maple', 'markdown', 'mathematica', 'matlab', 'ocaml', 'pascal', 'perl', 'php', 'powershell', 'prolog', 'protocol-buffer', 'python', 'r', 'racket', 'restructuredtext', 'rmarkdown', 'ruby', 'rust', 'sas', 'scala', 'scheme', 'shell', 'smalltalk', 'solidity', 'sparql', 'sql', 'stan', 'standard-ml', 'stata', 'systemverilog', 'tcl', 'tcsh', 'tex', 'thrift', 'typescript', 'verilog', 'vhdl', 'visual-basic', 'xslt', 'yacc', 'yaml', 'zig']`
 
 ### 2. Evaluation Results
 We evaluate DeepSeek Coder on various coding-related benchmarks.
@@ -37,7 +40,7 @@ The result shows that DeepSeek-Coder-Base-33B significantly outperforms existing
 Surprisingly, our DeepSeek-Coder-Base-7B reaches the performance of CodeLlama-34B.
 The DeepSeek-Coder-Instruct-33B model after instruction tuning outperforms GPT35-turbo on HumanEval and achieves comparable results with GPT35-turbo on MBPP.
 
-More evaluation details can be found in the [Detailed Evaluation](#5-detailed-evaluation-results).
+More evaluation details can be found in the [Detailed Evaluation](#6-detailed-evaluation-results).
 
 
 ### 3. Procedure of Data Creation and Model Training
@@ -126,14 +129,15 @@ This code will output the following result:
 #### 3) Chat Model Inference
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
 messages=[
     { 'role': 'user', 'content': "write a quick sort algorithm in python."}
 ]
-inputs = tokenizer.apply_chat_template(messages, return_tensors="pt").to(model.device)
-# 32021 is the id of <|EOT|> token
-outputs = model.generate(inputs, max_new_tokens=512, do_sample=False, top_k=50, top_p=0.95, num_return_sequences=1, eos_token_id=32021)
+inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt").to(model.device)
+# tokenizer.eos_token_id is the id of <|EOT|> token
+outputs = model.generate(inputs, max_new_tokens=512, do_sample=False, top_k=50, top_p=0.95, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
 print(tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True))
 ```
 This code will output the following result:
@@ -174,6 +178,7 @@ You are an AI programming assistant, utilizing the DeepSeek Coder model, develop
 #### 4) Repository Level Code Completion
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
 
@@ -325,6 +330,57 @@ The reproducible code for the following evaluation results can be found in the [
 #### 4) Program-Aid Math Reasoning Benchmark
 ![Math](pictures/Math.png)
 
+### Inference with vLLM
+
+You can also employ [vLLM](https://github.com/vllm-project/vllm) for high-throughput inference.
+
+**Text Completion**
+
+```python
+from vllm import LLM, SamplingParams
+
+tp_size = 4 # Tensor Parallelism
+sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=100)
+model_name = "deepseek-ai/deepseek-coder-6.7b-base"
+llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
+
+prompts = [
+    "If everyone in a country loves one another,",
+    "The research should also focus on the technologies",
+    "To determine if the label is correct, we need to"
+]
+outputs = llm.generate(prompts, sampling_params)
+
+generated_text = [output.outputs[0].text for output in outputs]
+print(generated_text)
+```
+
+**Chat Completion**
+
+```python
+from transformers import AutoTokenizer
+from vllm import LLM, SamplingParams
+
+tp_size = 4 # Tensor Parallelism
+sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=100)
+model_name = "deepseek-ai/deepseek-coder-6.7b-instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
+
+messages_list = [
+    [{"role": "user", "content": "Who are you?"}],
+    [{"role": "user", "content": "What can you do?"}],
+    [{"role": "user", "content": "Explain Transformer briefly."}],
+]
+prompts = [tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False) for messages in messages_list]
+
+sampling_params.stop = [tokenizer.eos_token]
+outputs = llm.generate(prompts, sampling_params)
+
+generated_text = [output.outputs[0].text for output in outputs]
+print(generated_text)
+```
+
 ### 7. Q&A
 
 #### Could You Provide the tokenizer.model File for Model Quantization?
@@ -352,7 +408,14 @@ python convert-hf-to-gguf.py <MODEL_PATH> --outfile <GGUF_PATH> --model-name dee
 ```
 ##### GPTQ(exllamav2)
 
-The [PR](https://github.com/turboderp/exllamav2/pull/189) to [exllamav2](https://github.com/turboderp/exllamav2) is also under reviewing. Please using the forked version before the PR getting merged.
+`UPDATE:`[exllamav2](https://github.com/turboderp/exllamav2) has been able to support Huggingface Tokenizer. Please pull the latest version and try out.
+
+Remember to set RoPE scaling to 4 for correct output, more discussion could be found in this [PR](https://github.com/turboderp/exllamav2/pull/189).
+
+#### How to use the deepseek-coder-instruct to complete the code?
+
+Although the deepseek-coder-instruct models are not specifically trained for code completion tasks during supervised fine-tuning (SFT), they retain the capability to perform code completion effectively. To enable this functionality, you simply need to adjust the eos_token_id parameter. Set the eos_token_id to 32014, as opposed to its default value of 32021 in the deepseek-coder-instruct configuration. This modification prompts the model to recognize the end of a sequence differently, thereby facilitating code completion tasks.
+
 
 ### 8. Resources
 [awesome-deepseek-coder](https://github.com/deepseek-ai/awesome-deepseek-coder) is a curated list of open-source projects related to DeepSeek Coder.
@@ -365,15 +428,15 @@ See the [LICENSE-CODE](LICENSE-CODE) and [LICENSE-MODEL](LICENSE-MODEL) for more
 ### 10. Citation
 ```
 @misc{deepseek-coder,
-  author = {DeepSeek AI},
-  title = {DeepSeek Coder: Let the Code Write Itself},
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/deepseek-ai/DeepSeek-Coder}},
+  author = {Daya Guo, Qihao Zhu, Dejian Yang, Zhenda Xie, Kai Dong, Wentao Zhang, Guanting Chen, Xiao Bi, Y. Wu, Y.K. Li, Fuli Luo, Yingfei Xiong, Wenfeng Liang},
+  title = {DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence},
+  journal = {CoRR},
+  volume = {abs/2401.14196},
+  year = {2024},
+  url = {https://arxiv.org/abs/2401.14196},
 }
 ```
 
 ### 11. Contact
 
-If you have any questions, please raise an issue or contact us at [agi_code@deepseek.com](mailto:agi_code@deepseek.com).
+If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).

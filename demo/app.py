@@ -48,7 +48,7 @@ def generate(
         conversation.extend([{"role": "user", "content": user}, {"role": "assistant", "content": assistant}])
     conversation.append({"role": "user", "content": message})
 
-    input_ids = tokenizer.apply_chat_template(conversation, return_tensors="pt")
+    input_ids = tokenizer.apply_chat_template(conversation, return_tensors="pt", add_generation_prompt=True)
     if input_ids.shape[1] > MAX_INPUT_TOKEN_LENGTH:
         input_ids = input_ids[:, -MAX_INPUT_TOKEN_LENGTH:]
         gr.Warning(f"Trimmed input from conversation as it was longer than {MAX_INPUT_TOKEN_LENGTH} tokens.")
@@ -62,7 +62,7 @@ def generate(
         do_sample=False,
         num_beams=1,
         repetition_penalty=repetition_penalty,
-        eos_token_id=32021
+        eos_token_id=tokenizer.eos_token_id
     )
     t = Thread(target=model.generate, kwargs=generate_kwargs)
     t.start()

@@ -162,7 +162,7 @@ def eval(args):
     # load data
     samples = []
     for rank in range(args.world_size):
-        out_file = f"outputs/{args.model_name}/{args.data_name}/world_size_{args.world_size}_rank_{args.rank}.json"
+        out_file = f"outputs/{args.model_name}/{args.data_name}/world_size_{args.world_size}_rank_{rank}.json"
         if not os.path.exists(out_file):
             raise FileNotFoundError(f"File {out_file} does not exist.")
         samples.extend(json.load(open(out_file,"r")))
