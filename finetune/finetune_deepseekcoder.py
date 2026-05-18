@@ -1,4 +1,6 @@
 import copy
+import inspect
+import os
 import random
 from dataclasses import dataclass, field
 from typing import Optional, Dict, Sequence
@@ -7,6 +9,7 @@ import torch
 import torch.distributed
 import transformers
 from transformers import Trainer
+from transformers.trainer_utils import get_last_checkpoint
 from datasets import load_dataset
 
 
@@ -24,6 +27,92 @@ You are an AI programming assistant, utilizing the DeepSeek Coder model, develop
 @dataclass
 class ModelArguments:
     model_name_or_path: Optional[str] = field(default="deepseek-ai/deepseek-coder-6.7b-instruct")
+    tokenizer_name_or_path: Optional[str] = field(
+        default=None,
+        metadata={"help": "Optional tokenizer source. Example: openai/gpt-oss-20b"},
+    )
+
+
+def project_vocab_weights_(new_weight: torch.Tensor, old_weight: torch.Tensor) -> None:
+    """Copy overlapping vocab rows and initialize extra rows."""
+    if old_weight.ndim != 2 or new_weight.ndim != 2:
+        return
+    if old_weight.shape[1] == 0 or new_weight.shape[1] == 0:
+        return
+    if old_weight.shape[1] != new_weight.shape[1]:
+        return
+
+    rows_to_copy = min(new_weight.shape[0], old_weight.shape[0])
+    if rows_to_copy == 0:
+        return
+
+    new_weight[:rows_to_copy].copy_(old_weight[:rows_to_copy])
+    if new_weight.shape[0] > rows_to_copy:
+        old_std = old_weight.std().item()
+        if old_std <= 0:
+            old_std = 0.02
+        torch.nn.init.normal_(new_weight[rows_to_copy:], mean=0.0, std=old_std)
+
+
+def adapt_model_to_tokenizer_vocab_(model, tokenizer, local_rank: int) -> None:
+    """Resize token embeddings/lm_head to tokenizer vocab and align special ids."""
+    new_vocab_size = len(tokenizer)
+    old_vocab_size = model.get_input_embeddings().weight.shape[0]
+
+    if local_rank in (-1, 0):
+        print(f"Model vocab size: {old_vocab_size}")
+        print(f"Tokenizer vocab size: {new_vocab_size}")
+
+    # Preserve old projection weights before resize.
+    with torch.no_grad():
+        old_input_weight = model.get_input_embeddings().weight.detach().clone()
+        old_lm_head = model.get_output_embeddings()
+        old_lm_head_weight = None
+        if old_lm_head is not None:
+            old_lm_head_weight = old_lm_head.weight.detach().clone()
+
+    model.resize_token_embeddings(new_vocab_size)
+    model.config.vocab_size = new_vocab_size
+
+    # Align model/generation special token ids with tokenizer.
+    model.config.bos_token_id = tokenizer.bos_token_id
+    model.config.eos_token_id = tokenizer.eos_token_id
+    model.config.pad_token_id = tokenizer.pad_token_id
+    model.generation_config.bos_token_id = tokenizer.bos_token_id
+    model.generation_config.eos_token_id = tokenizer.eos_token_id
+    model.generation_config.pad_token_id = tokenizer.pad_token_id
+
+    can_project_input = (
+        old_input_weight.ndim == 2
+        and old_input_weight.shape[0] > 0
+        and old_input_weight.shape[1] > 0
+        and model.get_input_embeddings().weight.ndim == 2
+        and model.get_input_embeddings().weight.shape[1] == old_input_weight.shape[1]
+    )
+    can_project_lm_head = (
+        old_lm_head_weight is not None
+        and old_lm_head_weight.ndim == 2
+        and old_lm_head_weight.shape[0] > 0
+        and old_lm_head_weight.shape[1] > 0
+        and model.get_output_embeddings() is not None
+        and model.get_output_embeddings().weight.ndim == 2
+        and model.get_output_embeddings().weight.shape[1] == old_lm_head_weight.shape[1]
+    )
+
+    with torch.no_grad():
+        if can_project_input:
+            project_vocab_weights_(model.get_input_embeddings().weight, old_input_weight)
+        elif local_rank in (-1, 0):
+            print("Skipping input embedding projection: source weights are empty/unmaterialized on this rank.")
+
+        new_lm_head = model.get_output_embeddings()
+        if new_lm_head is not None and can_project_lm_head:
+            project_vocab_weights_(new_lm_head.weight, old_lm_head_weight)
+        elif new_lm_head is not None and local_rank in (-1, 0):
+            print("Skipping lm_head projection: source weights are empty/unmaterialized on this rank.")
+
+    if local_rank in (-1, 0):
+        print("Applied tokenizer-vocab projection to model embeddings/lm_head.")
 
 @dataclass
 class DataArguments:
@@ -109,12 +198,12 @@ class DataCollatorForSupervisedDataset(object):
             attention_mask=input_ids.ne(self.tokenizer.pad_token_id),
         )
 
-def train_tokenize_function(examples, tokenizer):
+def train_tokenize_function(examples, tokenizer, eot_token):
     sources = [
         build_instruction_prompt(instruction)
         for instruction in examples['instruction']
     ]
-    targets = [f"{output}\n{EOT_TOKEN}" for output in examples['output']]
+    targets = [f"{output}\n{eot_token}" for output in examples['output']]
     data_dict = preprocess(sources, targets, tokenizer)
     return data_dict
 
@@ -126,25 +215,36 @@ def train():
         print('='*100)
         print(training_args)
     
+    tokenizer_source = model_args.tokenizer_name_or_path or model_args.model_name_or_path
     tokenizer = transformers.AutoTokenizer.from_pretrained(
-        model_args.model_name_or_path,
+        tokenizer_source,
         model_max_length=training_args.model_max_length,
         padding_side="right",
         use_fast=True,
         trust_remote_code=True
     )
 
+    if tokenizer.pad_token_id is None and tokenizer.eos_token_id is not None:
+        tokenizer.pad_token = tokenizer.eos_token
+
     print("PAD Token:", tokenizer.pad_token, tokenizer.pad_token_id)
     print("BOS Token", tokenizer.bos_token, tokenizer.bos_token_id)
     print("EOS Token", tokenizer.eos_token, tokenizer.eos_token_id)
 
     if training_args.local_rank == 0:
-        print("Load tokenizer from {} over.".format(model_args.model_name_or_path))
+        print("Load tokenizer from {} over.".format(tokenizer_source))
 
     model = transformers.AutoModelForCausalLM.from_pretrained(
         model_args.model_name_or_path,
         torch_dtype=torch.bfloat16
     )
+
+    if len(tokenizer) != model.get_input_embeddings().weight.shape[0]:
+        adapt_model_to_tokenizer_vocab_(model, tokenizer, training_args.local_rank)
+    else:
+        model.config.bos_token_id = tokenizer.bos_token_id
+        model.config.eos_token_id = tokenizer.eos_token_id
+        model.config.pad_token_id = tokenizer.pad_token_id
 
     if training_args.local_rank == 0:
         print("Load model from {} over.".format(model_args.model_name_or_path))
@@ -158,7 +258,9 @@ def train():
     )
     if training_args.local_rank > 0: 
         torch.distributed.barrier()
-        
+    
+    eot_token = tokenizer.eos_token or EOT_TOKEN
+    
     train_dataset = raw_train_datasets.map(
         train_tokenize_function,
         batched=True,
@@ -167,7 +269,7 @@ def train():
         remove_columns=raw_train_datasets.column_names,
         load_from_cache_file=True, # not args.overwrite_cache
         desc="Running Encoding",
-        fn_kwargs={ "tokenizer": tokenizer }
+        fn_kwargs={"tokenizer": tokenizer, "eot_token": eot_token}
     )
 
     if training_args.local_rank == 0:
@@ -182,9 +284,23 @@ def train():
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     data_module = dict(train_dataset=train_dataset, eval_dataset=None, data_collator=data_collator)
 
-    trainer = Trainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
+    trainer_kwargs = dict(model=model, args=training_args, **data_module)
+    trainer_signature = inspect.signature(Trainer.__init__)
+    if "processing_class" in trainer_signature.parameters:
+        # transformers>=5 renamed `tokenizer` to `processing_class`
+        trainer_kwargs["processing_class"] = tokenizer
+    else:
+        trainer_kwargs["tokenizer"] = tokenizer
 
-    trainer.train()
+    trainer = Trainer(**trainer_kwargs)
+
+    resume_checkpoint = training_args.resume_from_checkpoint
+    if resume_checkpoint is None and os.path.isdir(training_args.output_dir):
+        resume_checkpoint = get_last_checkpoint(training_args.output_dir)
+        if resume_checkpoint is not None and training_args.local_rank in (-1, 0):
+            print(f"Auto-resuming from latest checkpoint: {resume_checkpoint}")
+
+    trainer.train(resume_from_checkpoint=resume_checkpoint)
     trainer.save_state()
     safe_save_model_for_hf_trainer(trainer=trainer, output_dir=training_args.output_dir)
 
