@@ -48,18 +48,35 @@ def safe_save_model_for_hf_trainer(trainer: transformers.Trainer, output_dir: st
         trainer._save(output_dir, state_dict=cpu_state_dict)  # noqa
 
 
-def _tokenize_fn(strings: Sequence[str], tokenizer: transformers.PreTrainedTokenizer) -> Dict:
-    """Tokenize a list of strings."""
-    tokenized_list = [
-        tokenizer(
-            text,
-            return_tensors="pt",
-            padding="longest",
-            max_length=tokenizer.model_max_length,
-            truncation=True,
-        )
-        for text in strings
-    ]
+def _tokenize_fn(
+    strings: Sequence[str],
+    tokenizer: transformers.PreTrainedTokenizer,
+    truncation_side: Optional[str] = None,
+) -> Dict:
+    """Tokenize a list of strings, optionally overriding the truncation side.
+
+    The tokenizer is shared by the input and target passes in ``preprocess``.
+    Temporarily changing ``truncation_side`` keeps that setting local to this
+    call and avoids leaking it into the data collator or later dataset maps.
+    """
+    previous_truncation_side = getattr(tokenizer, "truncation_side", None)
+    if truncation_side is not None:
+        tokenizer.truncation_side = truncation_side
+
+    try:
+        tokenized_list = [
+            tokenizer(
+                text,
+                return_tensors="pt",
+                padding="longest",
+                max_length=tokenizer.model_max_length,
+                truncation=True,
+            )
+            for text in strings
+        ]
+    finally:
+        if truncation_side is not None and previous_truncation_side is not None:
+            tokenizer.truncation_side = previous_truncation_side
 
     input_ids = labels = [tokenized.input_ids[0] for tokenized in tokenized_list]
     input_ids_lens = labels_lens = [
@@ -79,14 +96,35 @@ def preprocess(
     targets: Sequence[str],
     tokenizer: transformers.PreTrainedTokenizer,
 ) -> Dict:
-    """Preprocess the data by tokenizing."""
+    """Preprocess the data by tokenizing.
+
+    Fine-tuning loss is computed only on ``targets``.  Right truncation can
+    discard the target when a prompt is longer than ``model_max_length``;
+    independently, masking the (truncated) source length then marks every
+    remaining token as ``IGNORE_INDEX``.  Both cases silently remove a sample
+    from the loss and can produce the zero/unstable losses reported in issue
+    #106.  Keep the suffix of the combined sequence and cap the source mask by
+    the target tokens that remain in that sequence.
+    """
     examples = [s + t for s, t in zip(sources, targets)]
-    examples_tokenized, sources_tokenized = [_tokenize_fn(strings, tokenizer) for strings in (examples, sources)]
+    # Preserve the response suffix for overlong examples.  Source and target
+    # lengths are both bounded by the model context, so preprocessing remains
+    # safe for arbitrarily long raw strings.
+    examples_tokenized = _tokenize_fn(examples, tokenizer, truncation_side="left")
+    sources_tokenized = _tokenize_fn(sources, tokenizer)
+    targets_tokenized = _tokenize_fn(targets, tokenizer, truncation_side="left")
     input_ids = examples_tokenized["input_ids"]
 
     labels = copy.deepcopy(input_ids)
-    for label, source_len in zip(labels, sources_tokenized["input_ids_lens"]):
-        label[:source_len] = IGNORE_INDEX
+    for label, source_len, target_len in zip(
+        labels,
+        sources_tokenized["input_ids_lens"],
+        targets_tokenized["input_ids_lens"],
+    ):
+        # ``target_len`` is capped and the combined sequence is left-truncated,
+        # therefore at most ``len(label) - target_len`` source tokens can remain.
+        retained_source_len = min(source_len, max(0, len(label) - target_len))
+        label[:retained_source_len] = IGNORE_INDEX
     return dict(input_ids=input_ids, labels=labels)
 
 @dataclass
