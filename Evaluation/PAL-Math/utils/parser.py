@@ -118,8 +118,8 @@ def strip_string(string):
         string = string.replace("inf", "\\infty")
     string = string.replace("+\\inity", "\\infty")
 
-    # and 
-    string = string.replace("and", "")
+    # and
+    string = re.sub(r"\band\b", "", string)
     string = string.replace("\\mathbf", "")
 
     # use regex to remove \mbox{...}
