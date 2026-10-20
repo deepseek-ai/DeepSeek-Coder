@@ -18,7 +18,7 @@ def stream_jsonl(filename: str) -> Iterable[Dict]:
     """
     if filename.endswith(".gz"):
         with open(filename, "rb") as gzfp:
-            with gzip.open(gzfp, 'rt') as fp:
+            with gzip.open(gzfp, 'rt', encoding='utf-8') as fp:
                 for line in fp:
                     if any(not x.isspace() for x in line):
                         yield json.loads(line)
