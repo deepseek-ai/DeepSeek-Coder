@@ -76,8 +76,8 @@ Here are some examples of how to use our model.
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base")
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", torch_dtype=torch.bfloat16).cuda()
 input_text = "#write a quick sort algorithm"
 inputs = tokenizer(input_text, return_tensors="pt").to(model.device)
 outputs = model.generate(**inputs, max_length=128)
@@ -103,8 +103,8 @@ def quick_sort(arr):
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base")
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", torch_dtype=torch.bfloat16).cuda()
 input_text = """<｜fim▁begin｜>def quick_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -130,8 +130,8 @@ This code will output the following result:
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct")
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-instruct", torch_dtype=torch.bfloat16).cuda()
 messages=[
     { 'role': 'user', 'content': "write a quick sort algorithm in python."}
 ]
@@ -179,8 +179,8 @@ You are an AI programming assistant, utilizing the DeepSeek Coder model, develop
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", trust_remote_code=True, torch_dtype=torch.bfloat16).cuda()
+tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base")
+model = AutoModelForCausalLM.from_pretrained("deepseek-ai/deepseek-coder-6.7b-base", torch_dtype=torch.bfloat16).cuda()
 
 input_text = """#utils.py
 import torch
@@ -342,7 +342,7 @@ from vllm import LLM, SamplingParams
 tp_size = 4 # Tensor Parallelism
 sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=100)
 model_name = "deepseek-ai/deepseek-coder-6.7b-base"
-llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
+llm = LLM(model=model_name, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
 
 prompts = [
     "If everyone in a country loves one another,",
@@ -365,7 +365,7 @@ tp_size = 4 # Tensor Parallelism
 sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=100)
 model_name = "deepseek-ai/deepseek-coder-6.7b-instruct"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-llm = LLM(model=model_name, trust_remote_code=True, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
+llm = LLM(model=model_name, gpu_memory_utilization=0.9, tensor_parallel_size=tp_size)
 
 messages_list = [
     [{"role": "user", "content": "Who are you?"}],

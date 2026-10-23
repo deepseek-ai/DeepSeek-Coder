@@ -70,13 +70,13 @@ def inference(args):
 
     # load model
     torch.set_default_tensor_type(torch.cuda.HalfTensor)
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path, trust_remote_code=True,padding_side="left")
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path, padding_side="left")
     try:
         tokenizer.pad_token_id = 0
     except:
         # Deal with CodeGeex-2
         pass
-    llm = AutoModelForCausalLM.from_pretrained(args.model_name_or_path, torch_dtype=torch.float16, device_map="auto",trust_remote_code=True)
+    llm = AutoModelForCausalLM.from_pretrained(args.model_name_or_path, torch_dtype=torch.float16, device_map="auto")
 
     #samples = samples[:32]
     print("dataset:", args.data_name, "samples:", len(samples))
