@@ -130,8 +130,7 @@ def train():
         model_args.model_name_or_path,
         model_max_length=training_args.model_max_length,
         padding_side="right",
-        use_fast=True,
-        trust_remote_code=True
+        use_fast=True
     )
 
     print("PAD Token:", tokenizer.pad_token, tokenizer.pad_token_id)

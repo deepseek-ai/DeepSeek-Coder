@@ -44,7 +44,7 @@ def generate_main(data_path: str, model_name_or_path: str, saved_path: str, mode
     print("Model `{}`, COT = {}:{}".format(model_type, cot, model_name_or_path))
     print("Saved path: {}".format(saved_path))
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
     print("load tokenizer {} from {} over.".format(tokenizer.__class__, model_name_or_path))
 
     # Create an LLM.
@@ -56,7 +56,6 @@ def generate_main(data_path: str, model_name_or_path: str, saved_path: str, mode
         max_num_batched_tokens=8192,
         max_model_len=4096,
         gpu_memory_utilization=0.85,
-        trust_remote_code=True
     )
     
     generated_examples = generate_batch(examples, tokenizer, llm, model_type)    
