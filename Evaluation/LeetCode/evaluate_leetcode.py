@@ -9,13 +9,17 @@ version = "20240121-Jul"
 DATA_DIR = Path(__file__).parent / "data"
 
 def extract_python_code(generation: str):
+    if not generation:
+        return ""
     generation = generation.replace("[PYTHON]", '```python').replace("[/PYTHON]", '```')
     if '```python' in generation:
-        p_code = re.compile(r'```python\n(.*?)\n```', flags=re.DOTALL)
-        code_block = p_code.findall(generation)[0]
-        return code_block
+        p_code = re.compile(r'```python[^\S\r\n]*\r?\n(.*?)(?:\r?\n```|```|$)', flags=re.DOTALL | re.IGNORECASE)
+        matches = p_code.findall(generation)
+        if matches:
+            return matches[0]
+        return generation
     else:
-        codelist = re.split("\ndef|\nclass|\nif|\n#|\nprint", generation)
+        codelist = re.split(r"\r?\n(?:def|class|if|#|print)", generation)
         return codelist[0]
     
 def evaluate_main(generation_path: str, result_path: str, temp_dir: str):
