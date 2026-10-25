@@ -54,8 +54,11 @@ def convert_for_evaluation(example):
     gpt_completion = example['gpt_completion']
     generation = gpt_completion
     try:
-        code_block: str = re.findall(f'```python\n(.*?)```', gpt_completion, re.DOTALL | re.IGNORECASE)[0]
-        generation = code_block
+        matches = re.findall(r'```python[^\S\r\n]*\r?\n(.*?)(?:```|$)', gpt_completion, re.DOTALL | re.IGNORECASE)
+        if not matches:
+            matches = re.findall(r'```[^\S\r\n]*\r?\n(.*?)(?:```|$)', gpt_completion, re.DOTALL)
+        if matches:
+            generation = matches[0]
     except Exception as ex:
         print("Failed to extract codeblock:\n{}".format(gpt_completion))
 

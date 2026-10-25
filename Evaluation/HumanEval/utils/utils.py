@@ -42,25 +42,41 @@ def get_function_name(question: str, lang: str):
     func_lines = [x for x in question.strip().split('\n') if x.strip()]
 
     if lang.lower() == 'python':
-        func_idx = [i for i in range(len(func_lines)) if func_lines[i].startswith("def ")][-1]
-        func_name = func_lines[func_idx].split('(')[0].strip()
-        func_prefix = "\n".join(func_lines[:func_idx])
-        return func_name, func_prefix
+        matching_lines = [i for i in range(len(func_lines)) if func_lines[i].lstrip().startswith("def ")]
+        if matching_lines:
+            func_idx = matching_lines[-1]
+            func_name = func_lines[func_idx].strip().split('(')[0].replace("def ", "").strip()
+            func_prefix = "\n".join(func_lines[:func_idx])
+            return func_name, func_prefix
+        return "", ""
     
-    func_name = func_lines[-1].split('{')[0].strip()
-    func_prefix = "\n".join(func_lines[:-1])
-    return func_name, func_prefix
+    if func_lines:
+        func_name = func_lines[-1].split('{')[0].strip()
+        func_prefix = "\n".join(func_lines[:-1])
+        return func_name, func_prefix
+    return "", ""
 
 def extract_generation_code(example: str, lang_code: str, verbose: bool=False):
     task_id = example['task_id']
     output = example.get('output', example.get("gpt_completion"))
+    if not output:
+        output = ""
     question = example["prompt"].strip()
     setting = languge_settings[lang_code]
     lang = setting['full_name']
     indent = setting['indent']
 
     try:
-        code_block: str = re.findall(f'```{lang.lower()}\n(.*?)```', output, re.DOTALL | re.IGNORECASE)[0]
+        # Match code block with language identifier or generic code block, supporting CRLF and unclosed blocks
+        pattern = rf'```{re.escape(lang.lower())}[^\S\r\n]*\r?\n(.*?)(?:```|$)'
+        matches = re.findall(pattern, output, re.DOTALL | re.IGNORECASE)
+        if not matches:
+            pattern_generic = r'```[^\S\r\n]*\r?\n(.*?)(?:```|$)'
+            matches = re.findall(pattern_generic, output, re.DOTALL)
+        if matches:
+            code_block = matches[0]
+        else:
+            code_block = output
         if verbose:
             print(">>> Task: {}\n{}".format(task_id, code_block))
         
@@ -72,9 +88,9 @@ def extract_generation_code(example: str, lang_code: str, verbose: bool=False):
         func_name, func_prefix = get_function_name(question, lang)
 
         try:
-            start = code_block.lower().index(func_name.lower())
+            start = code_block.lower().index(func_name.lower()) if func_name else 0
             indent = 0
-            while start - indent >= 0 and code_block[start - indent-1] == ' ':
+            while start - indent > 0 and code_block[start - indent - 1] == ' ':
                 indent += 1
             
             try:
@@ -93,7 +109,7 @@ def extract_generation_code(example: str, lang_code: str, verbose: bool=False):
         if lang_code.lower() in ['php', 'ts', 'js']:
             body += '\n' + ' '*indent + '}'
     
-        generation = func_prefix + '\n' + body + '\n'
+        generation = func_prefix + '\n' + body + '\n' if func_prefix else body + '\n'
         example['generation'] = generation
 
     except Exception as ex:
