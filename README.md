@@ -1,3 +1,5 @@
+> 🇹🇷 Türkçe rehber: [README_TR.md](README_TR.md)
+
 <p align="center">
 <img width="1000px" alt="DeepSeek Coder" src="pictures/logo.png">
 </p>
